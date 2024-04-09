@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using NGANHANG.SubForm;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -349,11 +350,6 @@ namespace NGANHANG.MenuForm
             }
         }
 
-        private void btnMoTaiKhoan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-
-        }
-
         private void btnTHOAT_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             MessageBox.Show("Bạn chắc chắn muốn thoát ?", "Thông báo", MessageBoxButtons.OK);
@@ -420,24 +416,38 @@ namespace NGANHANG.MenuForm
 
             if (txtDiaChi.Text.Length > 100)
             {
-                MessageBox.Show("Không bỏ trống địa chỉ", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Địa chỉ không thể lớn hơn 100 kí tự", "Thông báo", MessageBoxButtons.OK);
                 txtDiaChi.Focus();
                 return false;
             }
 
-
-            if (Regex.IsMatch(txtSDT.Text, @"^[0-9]{10}$") == false)
-            {
-                MessageBox.Show("Số điện thoại phải là 10 số", "Thông báo", MessageBoxButtons.OK);
-                txtDiaChi.Focus();
-                return false;
-            }
             if (txtSDT.Text == "")
             {
                 MessageBox.Show("Không được bỏ trống số điện thoại", "Thông báo", MessageBoxButtons.OK);
                 txtSDT.Focus();
                 return false;
             }
+            if (Regex.IsMatch(txtSDT.Text, @"^[0-9]{10}$") == false)
+            {
+                MessageBox.Show("Số điện thoại phải là 10 số", "Thông báo", MessageBoxButtons.OK);
+                txtSDT.Focus();
+                return false;
+            }
+
+            if (txtCMND.Text == "")
+            {
+                MessageBox.Show("Không được bỏ trống chứng minh nhân dân", "Thông báo", MessageBoxButtons.OK);
+                txtSDT.Focus();
+                return false;
+            }
+            if (Regex.IsMatch(txtCMND.Text, @"^[0-9]+$") == false)
+            {
+                MessageBox.Show("Chứng minh nhân dân chỉ nhận số", "Thông báo", MessageBoxButtons.OK);
+                txtCMND.Focus();
+                return false;
+            }
+            
+
             if (DangThemMoi == true)
             {
                 String cauTruyVan2 = "DECLARE @RETURN INT ;" +
@@ -504,6 +514,20 @@ namespace NGANHANG.MenuForm
                 }
             }
             return true;
+        }
+
+        private void btnMoTaiKhoan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form f = this.CheckExists(typeof(FormMoTaiKhoan));
+            if (f != null)
+            {
+                f.Activate();
+            }
+            else
+            {
+                FormMoTaiKhoan form = new FormMoTaiKhoan();
+                form.Show();
+            }
         }
     }
 }

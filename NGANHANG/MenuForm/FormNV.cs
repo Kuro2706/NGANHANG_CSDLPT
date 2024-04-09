@@ -598,24 +598,37 @@ namespace NGANHANG.MenuForm
 
             if (txtDiaChi.Text.Length > 100)
             {
-                MessageBox.Show("Không bỏ trống địa chỉ", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Địa chỉ không thể lớn hơn 100 kí tự", "Thông báo", MessageBoxButtons.OK);
                 txtDiaChi.Focus();
                 return false;
             }
 
-
-            if (Regex.IsMatch(txtSDT.Text, @"^[0-9]{10}$") == false)
-            {
-                MessageBox.Show("Số điện thoại phải là 10 số", "Thông báo", MessageBoxButtons.OK);
-                txtDiaChi.Focus();
-                return false;
-            }
             if (txtSDT.Text == "")
             {
                 MessageBox.Show("Không được bỏ trống số điện thoại", "Thông báo", MessageBoxButtons.OK);
                 txtSDT.Focus();
                 return false;
             }
+            if (Regex.IsMatch(txtSDT.Text, @"^[0-9]{10}$") == false)
+            {
+                MessageBox.Show("Số điện thoại phải là 10 số", "Thông báo", MessageBoxButtons.OK);
+                txtSDT.Focus();
+                return false;
+            }
+
+            if (txtCMND.Text == "")
+            {
+                MessageBox.Show("Không được bỏ trống chứng minh nhân dân", "Thông báo", MessageBoxButtons.OK);
+                txtCMND.Focus();
+                return false;
+            }
+            if (Regex.IsMatch(txtCMND.Text, @"^[0-9]+$") == false)
+            {
+                MessageBox.Show("Chứng minh nhân dân chỉ nhận số", "Thông báo", MessageBoxButtons.OK);
+                txtCMND.Focus();
+                return false;
+            }
+
             if (DangThemMoi == true)
             {
                 String cauTruyVan1 = "DECLARE @RETURN INT ;" +

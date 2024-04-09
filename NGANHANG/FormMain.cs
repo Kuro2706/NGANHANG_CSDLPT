@@ -135,12 +135,32 @@ namespace NGANHANG
 
         private void btnGiaoDich_ItemClick(object sender, ItemClickEventArgs e)
         {
-           
+            Form f = this.CheckExists(typeof(FormKH));
+            if (f != null)
+            {
+                f.Activate();
+            }
+            else
+            {
+                FormGD form = new FormGD();
+                form.MdiParent = this;
+                form.Show();
+            }
         }
 
         private void btnTaiKhoan_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            Form f = this.CheckExists(typeof(FormKH));
+            if (f != null)
+            {
+                f.Activate();
+            }
+            else
+            {
+                FormTK form = new FormTK();
+                form.MdiParent = this;
+                form.Show();
+            }
         }
     }   
 }

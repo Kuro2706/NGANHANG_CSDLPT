@@ -90,6 +90,7 @@ namespace NGANHANG.SubForm
             this.Controls.Add(this.cmbChiNhanh);
             this.Controls.Add(this.label1);
             this.Name = "FormChuyenChiNhanh";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chuyển chi nhánh";
             this.Load += new System.EventHandler(this.FormChuyenChiNhanh_Load);
             this.ResumeLayout(false);

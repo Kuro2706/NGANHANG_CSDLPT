@@ -133,6 +133,9 @@
     <EmbeddedResource Include="SubForm\FormChuyenChiNhanh.resx">
       <DependentUpon>FormChuyenChiNhanh.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\FormMoTaiKhoan.resx">
+      <DependentUpon>FormMoTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.config" />
     <None Include="NGANHANGDataSet.xsc">
       <DependentUpon>NGANHANGDataSet.xsd</DependentUpon>
