@@ -85,6 +85,7 @@ namespace NGANHANG.MenuForm
             this.gD_GOIRUTTableAdapter = new NGANHANG.NGANHANGDataSetTableAdapters.GD_GOIRUTTableAdapter();
             this.bdsGDChuyenTien = new System.Windows.Forms.BindingSource(this.components);
             this.gD_CHUYENTIENTableAdapter = new NGANHANG.NGANHANGDataSetTableAdapters.GD_CHUYENTIENTableAdapter();
+            this.btnSua = new DevExpress.XtraBars.BarButtonItem();
             lbMANV = new System.Windows.Forms.Label();
             lbHoTen = new System.Windows.Forms.Label();
             lbCMND = new System.Windows.Forms.Label();
@@ -211,9 +212,10 @@ namespace NGANHANG.MenuForm
             this.btnHoanTac,
             this.btnLamMoi,
             this.btnChuyenChiNhanh,
-            this.btnTHOAT});
+            this.btnTHOAT,
+            this.btnSua});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 8;
+            this.barManager1.MaxItemId = 9;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar2
@@ -224,6 +226,7 @@ namespace NGANHANG.MenuForm
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnThem, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnSua, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnGhi, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnHoanTac, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
@@ -653,6 +656,15 @@ namespace NGANHANG.MenuForm
             // 
             this.gD_CHUYENTIENTableAdapter.ClearBeforeFill = true;
             // 
+            // btnSua
+            // 
+            this.btnSua.Caption = "Sửa";
+            this.btnSua.Id = 8;
+            this.btnSua.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSua.ImageOptions.SvgImage")));
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(70, 0);
+            this.btnSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSua_ItemClick);
+            // 
             // FormNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -742,5 +754,6 @@ namespace NGANHANG.MenuForm
         private System.Windows.Forms.BindingSource bdsGDChuyenTien;
         private NGANHANGDataSetTableAdapters.GD_CHUYENTIENTableAdapter gD_CHUYENTIENTableAdapter;
         private System.Windows.Forms.CheckBox cbTrangThaiXoa;
+        private DevExpress.XtraBars.BarButtonItem btnSua;
     }
 }

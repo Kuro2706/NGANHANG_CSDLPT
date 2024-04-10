@@ -68,11 +68,13 @@ namespace NGANHANG.MenuForm
                 cmbChiNhanh.Enabled = true;
 
                 this.btnThem.Enabled = false;
+                this.btnSua.Enabled = false;
                 this.btnXoa.Enabled = false;
                 this.btnGhi.Enabled = false;
                 this.btnHoanTac.Enabled = false;
                 this.btnLamMoi.Enabled = true;
                 this.btnChuyenChiNhanh.Enabled = false;
+                this.btnTHOAT.Enabled = true;
 
                 this.panelNhapLieu.Enabled = false;
             }
@@ -82,15 +84,15 @@ namespace NGANHANG.MenuForm
                 cmbChiNhanh.Enabled = false;
 
                 this.btnThem.Enabled = true;
+                this.btnSua.Enabled = true;
                 this.btnXoa.Enabled = true;
-                this.btnGhi.Enabled = true;
+                this.btnGhi.Enabled = false;
                 this.btnHoanTac.Enabled = false;
                 this.btnLamMoi.Enabled = true;
                 this.btnChuyenChiNhanh.Enabled = true;
+                this.btnTHOAT.Enabled = true;
 
-                this.panelNhapLieu.Enabled = true;
-                this.txtMANV.Enabled = false;
-                this.txtMACN.Enabled = false;
+                this.panelNhapLieu.Enabled = false;
             }
         }
 
@@ -151,13 +153,13 @@ namespace NGANHANG.MenuForm
             txtMACN.EditValue = MACN;
 
             //step 3
-            this.txtMANV.Enabled = true;
 
             this.btnThem.Enabled = false;
+            this.btnSua.Enabled = false;
             this.btnXoa.Enabled = false;
             this.btnGhi.Enabled = true;
-            this.btnHoanTac.Enabled = false;
-            this.btnLamMoi.Enabled = false;
+            this.btnHoanTac.Enabled = true;
+            this.btnLamMoi.Enabled = true;
             this.btnChuyenChiNhanh.Enabled = false;
             this.btnTHOAT.Enabled = true;
             this.cbTrangThaiXoa.Checked = false;
@@ -165,6 +167,22 @@ namespace NGANHANG.MenuForm
             this.gcNhanVien.Enabled = false;
             this.panelNhapLieu.Enabled = true;
 
+        }
+
+        private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ViTri = bdsNhanVien.Position;
+            this.panelNhapLieu.Enabled = true;
+            this.txtCMND.Enabled = false;
+            this.txtMACN.Enabled = false;
+
+            this.btnThem.Enabled = false;
+            this.btnSua.Enabled = false;
+            this.btnXoa.Enabled = false;
+            this.btnGhi.Enabled = true;
+            this.btnHoanTac.Enabled = true;
+            this.btnLamMoi.Enabled = true;
+            this.btnChuyenChiNhanh.Enabled = false;
         }
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -232,6 +250,7 @@ namespace NGANHANG.MenuForm
             {
                 undoList.Pop();
             }
+            this.panelNhapLieu.Enabled = false;
         }
 
         private void btnGhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -306,12 +325,15 @@ namespace NGANHANG.MenuForm
                         this.txtMACN.Enabled = false;
 
                         this.btnThem.Enabled = true;
+                        this.btnSua.Enabled = true;
                         this.btnXoa.Enabled = true;
                         this.btnGhi.Enabled = false;
                         this.btnHoanTac.Enabled = true;
                         this.btnLamMoi.Enabled = true;
                         this.btnChuyenChiNhanh.Enabled = true;
                         this.btnTHOAT.Enabled = true;
+
+                        this.panelNhapLieu.Enabled = false;
 
                         this.bdsNhanVien.EndEdit();
                         this.nhanVienTableAdapter.Update(this.dataSet.NhanVien);
@@ -343,8 +365,8 @@ namespace NGANHANG.MenuForm
 
                 DangThemMoi = false;
 
-                this.txtMANV.Enabled = false;
                 this.btnThem.Enabled = true;
+                this.btnSua.Enabled = true;
                 this.btnXoa.Enabled = true;
                 this.btnGhi.Enabled = true;
                 this.btnHoanTac.Enabled = false;
@@ -353,7 +375,7 @@ namespace NGANHANG.MenuForm
                 this.btnChuyenChiNhanh.Enabled = true;
                 this.cbTrangThaiXoa.Checked = false;
 
-                this.panelNhapLieu.Enabled = true;
+                this.panelNhapLieu.Enabled = false;
                 this.gcNhanVien.Enabled = true;
 
                 bdsNhanVien.CancelEdit();
@@ -427,8 +449,8 @@ namespace NGANHANG.MenuForm
             {
 
                 this.nhanVienTableAdapter.Fill(this.dataSet.NhanVien);
-                this.btnGhi.Enabled = true;
                 this.gcNhanVien.Enabled = true;
+                this.panelNhapLieu.Enabled = false;
             }
             catch (Exception ex)
             {

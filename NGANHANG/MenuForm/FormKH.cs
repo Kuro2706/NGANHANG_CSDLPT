@@ -67,10 +67,12 @@ namespace NGANHANG.MenuForm
 
                 this.btnThem.Enabled = false;
                 this.btnXoa.Enabled = false;
+                this.btnSua.Enabled = false;
                 this.btnGhi.Enabled = false;
                 this.btnHoanTac.Enabled = false;
                 this.btnLamMoi.Enabled = true;
                 this.btnMoTaiKhoan.Enabled = false;
+                this.btnTHOAT.Enabled = true;
 
                 this.panelNhapLieu.Enabled = false;
             }
@@ -81,15 +83,14 @@ namespace NGANHANG.MenuForm
 
                 this.btnThem.Enabled = true;
                 this.btnXoa.Enabled = true;
-                this.btnGhi.Enabled = true;
+                this.btnSua.Enabled = true;
+                this.btnGhi.Enabled = false;
                 this.btnHoanTac.Enabled = false;
                 this.btnLamMoi.Enabled = true;
                 this.btnMoTaiKhoan.Enabled = true;
+                this.btnTHOAT.Enabled = true;
 
-                this.panelNhapLieu.Enabled = true;
-                this.txtCMND.Enabled = false;
-                this.deNgayCap.Enabled = false;
-                this.txtMACN.Enabled = false;
+                this.panelNhapLieu.Enabled = false;
             }
         }
         private void cmbChiNhanh_SelectedIndexChanged(object sender, EventArgs e)
@@ -140,20 +141,35 @@ namespace NGANHANG.MenuForm
             txtMACN.EditValue = MACN;
 
             //step 3
-            this.txtCMND.Enabled = true;
-            this.deNgayCap.Enabled = true;
-
             this.btnThem.Enabled = false;
+            this.btnSua.Enabled = false;
             this.btnXoa.Enabled = false;
             this.btnGhi.Enabled = true;
-            this.btnHoanTac.Enabled = false;
-            this.btnLamMoi.Enabled = false;
+            this.btnHoanTac.Enabled = true;
+            this.btnLamMoi.Enabled = true;
             this.btnMoTaiKhoan.Enabled = false;
             this.btnTHOAT.Enabled = true;
 
             this.gcKhachHang.Enabled = false;
             this.panelNhapLieu.Enabled = true;
 
+        }
+
+        private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ViTri = bdsKhachHang.Position;
+            this.panelNhapLieu.Enabled = true;
+            this.txtCMND.Enabled = false;
+            this.txtMACN.Enabled = false;
+            this.deNgayCap.Enabled = false;
+
+            this.btnThem.Enabled = false;
+            this.btnSua.Enabled = false;
+            this.btnXoa.Enabled = false;
+            this.btnGhi.Enabled = true;
+            this.btnHoanTac.Enabled = true;
+            this.btnLamMoi.Enabled = true;
+            this.btnMoTaiKhoan.Enabled = false;
         }
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -208,6 +224,7 @@ namespace NGANHANG.MenuForm
             {
                 undoList.Pop();
             }
+            this.panelNhapLieu.Enabled = false;
         }
 
         private void btnGhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -256,7 +273,7 @@ namespace NGANHANG.MenuForm
                           "DIACHI = N'" + diaChi + "'," +
                           "PHAI = '" + phai + "'," +
                           "NGAYCAP = CAST('" + ngayCap.ToString("yyyy-MM-dd") + "' AS DATE)," +
-                          "SODT = '" + sdt + "'," +
+                          "SODT = '" + sdt + "'" +
                           "WHERE CMND = '" + cmnd + "'";
                         ViTri = bdsKhachHang.Position;
 
@@ -268,13 +285,15 @@ namespace NGANHANG.MenuForm
 
                     DangThemMoi = false;
                     btnThem.Enabled = true;
+                    btnSua.Enabled = true;
                     btnXoa.Enabled = true;
                     btnGhi.Enabled = false;
                     btnHoanTac.Enabled = true;
-
                     btnLamMoi.Enabled = true;
                     btnMoTaiKhoan.Enabled = true;
                     btnTHOAT.Enabled = true;
+
+                    panelNhapLieu.Enabled = false;
 
                     this.bdsKhachHang.EndEdit();
                     this.khachHangTableAdapter.Update(this.dataSet.KhachHang);
@@ -303,8 +322,8 @@ namespace NGANHANG.MenuForm
             {
                 DangThemMoi = false;
 
-                this.txtCMND.Enabled = false;
                 this.btnThem.Enabled = true;
+                this.btnSua.Enabled = true;
                 this.btnXoa.Enabled = true;
                 this.btnGhi.Enabled = true;
                 this.btnHoanTac.Enabled = false;
@@ -314,7 +333,7 @@ namespace NGANHANG.MenuForm
 
 
                 this.gcKhachHang.Enabled = true;
-                this.panelNhapLieu.Enabled = true;
+                this.panelNhapLieu.Enabled = false;
 
                 bdsKhachHang.CancelEdit();
 
@@ -340,8 +359,8 @@ namespace NGANHANG.MenuForm
             try
             {
                 this.khachHangTableAdapter.Fill(this.dataSet.KhachHang);
-                this.btnGhi.Enabled = true;
                 this.gcKhachHang.Enabled = true;
+                this.panelNhapLieu.Enabled = false;
             }
             catch (Exception ex)
             {

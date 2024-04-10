@@ -27,14 +27,31 @@ namespace NGANHANG
         }
         public void enableButtons()
         {
-            btnDangNhap.Enabled = false;
-            btnDangXuat.Enabled = true;
-            btnTaoTaiKhoan.Enabled = true;
-            btnThoat.Enabled = true;
+            if(Program.mGroup == "NGANHANG")
+            {
+                btnDangNhap.Enabled = false;
+                btnDangXuat.Enabled = true;
+                btnTaoTaiKhoan.Enabled = true;
+                btnThoat.Enabled = true;
 
-            pageQuanLy.Visible = true;
-            pageBaoCao.Visible = true;
-            pageKH.Visible = false;
+                pageQuanLy.Visible = true;
+                pageBaoCao.Visible = true;
+                btnGiaoDich.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                pageKH.Visible = false;
+            }
+            if(Program.mGroup == "CHINHANH")
+            {
+                btnDangNhap.Enabled = false;
+                btnDangXuat.Enabled = true;
+                btnTaoTaiKhoan.Enabled = true;
+                btnThoat.Enabled = true;
+
+                pageQuanLy.Visible = true;
+                pageBaoCao.Visible = true;
+                btnGiaoDich.Enabled = true;
+                pageKH.Visible = false;
+            }
+            
         }
 
         public void enableButtonsKH()
@@ -43,6 +60,7 @@ namespace NGANHANG
             btnDangXuat.Enabled = true;
             btnTaoTaiKhoan.Enabled = false;
             btnThoat.Enabled = true;
+            btnTaoTaiKhoan.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
 
             pageQuanLy.Visible = false;
             pageBaoCao.Visible = false;

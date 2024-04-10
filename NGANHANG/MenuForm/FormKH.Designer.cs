@@ -35,8 +35,8 @@ namespace NGANHANG.MenuForm
             System.Windows.Forms.Label lbNgayCap;
             System.Windows.Forms.Label lbDiaChi;
             System.Windows.Forms.Label lbPhai;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormKH));
             System.Windows.Forms.Label mACNLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormKH));
             this.lbSDT = new System.Windows.Forms.Label();
             this.dataSet = new NGANHANG.NGANHANGDataSet();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
@@ -71,6 +71,7 @@ namespace NGANHANG.MenuForm
             this.colSODT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMACN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelNhapLieu = new DevExpress.XtraEditors.PanelControl();
+            this.txtMACN = new DevExpress.XtraEditors.TextEdit();
             this.txtPhai = new DevExpress.XtraEditors.TextEdit();
             this.txtDiaChi = new DevExpress.XtraEditors.TextEdit();
             this.txtSDT = new DevExpress.XtraEditors.TextEdit();
@@ -81,7 +82,7 @@ namespace NGANHANG.MenuForm
             this.bdsTaiKhoan = new System.Windows.Forms.BindingSource(this.components);
             this.bdsGDGoiRut = new System.Windows.Forms.BindingSource(this.components);
             this.gD_GOIRUTTableAdapter = new NGANHANG.NGANHANGDataSetTableAdapters.GD_GOIRUTTableAdapter();
-            this.txtMACN = new DevExpress.XtraEditors.TextEdit();
+            this.btnSua = new DevExpress.XtraBars.BarButtonItem();
             lbCMND = new System.Windows.Forms.Label();
             lbHoTen = new System.Windows.Forms.Label();
             lbNgayCap = new System.Windows.Forms.Label();
@@ -97,6 +98,7 @@ namespace NGANHANG.MenuForm
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelNhapLieu)).BeginInit();
             this.panelNhapLieu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMACN.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPhai.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSDT.Properties)).BeginInit();
@@ -107,7 +109,6 @@ namespace NGANHANG.MenuForm
             ((System.ComponentModel.ISupportInitialize)(this.txtCMND.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsTaiKhoan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsGDGoiRut)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMACN.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // lbCMND
@@ -160,6 +161,16 @@ namespace NGANHANG.MenuForm
             lbPhai.TabIndex = 13;
             lbPhai.Text = "Phái:";
             // 
+            // mACNLabel
+            // 
+            mACNLabel.AutoSize = true;
+            mACNLabel.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            mACNLabel.Location = new System.Drawing.Point(814, 117);
+            mACNLabel.Name = "mACNLabel";
+            mACNLabel.Size = new System.Drawing.Size(104, 19);
+            mACNLabel.TabIndex = 14;
+            mACNLabel.Text = "Mã chi nhánh:";
+            // 
             // lbSDT
             // 
             this.lbSDT.AutoSize = true;
@@ -192,9 +203,10 @@ namespace NGANHANG.MenuForm
             this.btnHoanTac,
             this.btnLamMoi,
             this.btnMoTaiKhoan,
-            this.btnTHOAT});
+            this.btnTHOAT,
+            this.btnSua});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 8;
+            this.barManager1.MaxItemId = 9;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar2
@@ -205,6 +217,7 @@ namespace NGANHANG.MenuForm
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnThem, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnSua, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnGhi, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnHoanTac, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
@@ -504,6 +517,17 @@ namespace NGANHANG.MenuForm
             this.panelNhapLieu.Size = new System.Drawing.Size(1498, 309);
             this.panelNhapLieu.TabIndex = 14;
             // 
+            // txtMACN
+            // 
+            this.txtMACN.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsKhachHang, "MACN", true));
+            this.txtMACN.Location = new System.Drawing.Point(935, 114);
+            this.txtMACN.MenuManager = this.barManager1;
+            this.txtMACN.Name = "txtMACN";
+            this.txtMACN.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMACN.Properties.Appearance.Options.UseFont = true;
+            this.txtMACN.Size = new System.Drawing.Size(124, 26);
+            this.txtMACN.TabIndex = 15;
+            // 
             // txtPhai
             // 
             this.txtPhai.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsKhachHang, "PHAI", true));
@@ -600,26 +624,14 @@ namespace NGANHANG.MenuForm
             // 
             this.gD_GOIRUTTableAdapter.ClearBeforeFill = true;
             // 
-            // mACNLabel
+            // btnSua
             // 
-            mACNLabel.AutoSize = true;
-            mACNLabel.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            mACNLabel.Location = new System.Drawing.Point(814, 117);
-            mACNLabel.Name = "mACNLabel";
-            mACNLabel.Size = new System.Drawing.Size(104, 19);
-            mACNLabel.TabIndex = 14;
-            mACNLabel.Text = "Mã chi nhánh:";
-            // 
-            // txtMACN
-            // 
-            this.txtMACN.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsKhachHang, "MACN", true));
-            this.txtMACN.Location = new System.Drawing.Point(935, 114);
-            this.txtMACN.MenuManager = this.barManager1;
-            this.txtMACN.Name = "txtMACN";
-            this.txtMACN.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMACN.Properties.Appearance.Options.UseFont = true;
-            this.txtMACN.Size = new System.Drawing.Size(124, 26);
-            this.txtMACN.TabIndex = 15;
+            this.btnSua.Caption = "Sửa";
+            this.btnSua.Id = 8;
+            this.btnSua.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSua.ImageOptions.SvgImage")));
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(70, 0);
+            this.btnSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSua_ItemClick);
             // 
             // FormKH
             // 
@@ -647,6 +659,7 @@ namespace NGANHANG.MenuForm
             ((System.ComponentModel.ISupportInitialize)(this.panelNhapLieu)).EndInit();
             this.panelNhapLieu.ResumeLayout(false);
             this.panelNhapLieu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMACN.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPhai.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSDT.Properties)).EndInit();
@@ -657,7 +670,6 @@ namespace NGANHANG.MenuForm
             ((System.ComponentModel.ISupportInitialize)(this.txtCMND.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsTaiKhoan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsGDGoiRut)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMACN.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -709,5 +721,6 @@ namespace NGANHANG.MenuForm
         private NGANHANGDataSetTableAdapters.GD_GOIRUTTableAdapter gD_GOIRUTTableAdapter;
         private System.Windows.Forms.Label lbSDT;
         private DevExpress.XtraEditors.TextEdit txtMACN;
+        private DevExpress.XtraBars.BarButtonItem btnSua;
     }
 }
