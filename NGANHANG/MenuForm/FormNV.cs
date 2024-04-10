@@ -13,6 +13,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace NGANHANG.MenuForm
 {
     public partial class FormNV : DevExpress.XtraEditors.XtraForm
@@ -46,6 +47,7 @@ namespace NGANHANG.MenuForm
 
         private void FormNV_Load(object sender, EventArgs e)
         {
+
             dataSet.EnforceConstraints = false;
 
             this.nhanVienTableAdapter.Connection.ConnectionString = Program.connstr;
@@ -58,7 +60,7 @@ namespace NGANHANG.MenuForm
             this.gD_CHUYENTIENTableAdapter.Fill(this.dataSet.GD_CHUYENTIEN);
 
             MACN = ((DataRowView)bdsNhanVien[0])["MACN"].ToString();
-            cmbChiNhanh.DataSource = Program.bindingSource;/*sao chep bingding source tu form dang nhap*/
+            cmbChiNhanh.DataSource = Program.bds_dspm;/*sao chep bingding source tu form dang nhap*/
             cmbChiNhanh.DisplayMember = "TENCN";
             cmbChiNhanh.ValueMember = "TENSERVER";
             cmbChiNhanh.SelectedIndex = Program.mChiNhanh;
@@ -75,6 +77,7 @@ namespace NGANHANG.MenuForm
                 this.btnLamMoi.Enabled = true;
                 this.btnChuyenChiNhanh.Enabled = false;
                 this.btnTHOAT.Enabled = true;
+
 
                 this.panelNhapLieu.Enabled = false;
             }

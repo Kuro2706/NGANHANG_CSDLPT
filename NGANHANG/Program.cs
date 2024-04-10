@@ -42,6 +42,8 @@ namespace NGANHANG
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        /// 
+        public static BindingSource bds_dspm = new BindingSource(); //giu dspm khi dang nhap
         public static int KetNoi()
         {
             if (Program.conn != null && Program.conn.State == ConnectionState.Open)

@@ -38,6 +38,8 @@ namespace NGANHANG.SubForm
             this.txtSoDu = new DevExpress.XtraEditors.TextEdit();
             this.btnXacNhan = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
+            this.lbChiNhanh = new System.Windows.Forms.Label();
+            this.cmbChiNhanh = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.txtCMND.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSTK.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoDu.Properties)).BeginInit();
@@ -47,9 +49,9 @@ namespace NGANHANG.SubForm
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 21.78151F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(289, 52);
+            this.label1.Location = new System.Drawing.Point(286, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(233, 42);
+            this.label1.Size = new System.Drawing.Size(226, 41);
             this.label1.TabIndex = 0;
             this.label1.Text = "TÀI KHOẢN";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -57,8 +59,8 @@ namespace NGANHANG.SubForm
             // lbCMND
             // 
             this.lbCMND.AutoSize = true;
-            this.lbCMND.Font = new System.Drawing.Font("Times New Roman", 12.70588F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCMND.Location = new System.Drawing.Point(192, 159);
+            this.lbCMND.Font = new System.Drawing.Font("Times New Roman", 12.10084F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCMND.Location = new System.Drawing.Point(193, 183);
             this.lbCMND.Name = "lbCMND";
             this.lbCMND.Size = new System.Drawing.Size(81, 24);
             this.lbCMND.TabIndex = 1;
@@ -67,8 +69,8 @@ namespace NGANHANG.SubForm
             // lbSTK
             // 
             this.lbSTK.AutoSize = true;
-            this.lbSTK.Font = new System.Drawing.Font("Times New Roman", 12.70588F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSTK.Location = new System.Drawing.Point(192, 220);
+            this.lbSTK.Font = new System.Drawing.Font("Times New Roman", 12.10084F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSTK.Location = new System.Drawing.Point(192, 238);
             this.lbSTK.Name = "lbSTK";
             this.lbSTK.Size = new System.Drawing.Size(128, 24);
             this.lbSTK.TabIndex = 2;
@@ -77,8 +79,8 @@ namespace NGANHANG.SubForm
             // lbSoDu
             // 
             this.lbSoDu.AutoSize = true;
-            this.lbSoDu.Font = new System.Drawing.Font("Times New Roman", 12.70588F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSoDu.Location = new System.Drawing.Point(192, 277);
+            this.lbSoDu.Font = new System.Drawing.Font("Times New Roman", 12.10084F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSoDu.Location = new System.Drawing.Point(192, 295);
             this.lbSoDu.Name = "lbSoDu";
             this.lbSoDu.Size = new System.Drawing.Size(69, 24);
             this.lbSoDu.TabIndex = 3;
@@ -86,27 +88,27 @@ namespace NGANHANG.SubForm
             // 
             // txtCMND
             // 
-            this.txtCMND.Location = new System.Drawing.Point(399, 153);
+            this.txtCMND.Location = new System.Drawing.Point(399, 177);
             this.txtCMND.Name = "txtCMND";
-            this.txtCMND.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.70588F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCMND.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.10084F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCMND.Properties.Appearance.Options.UseFont = true;
             this.txtCMND.Size = new System.Drawing.Size(234, 30);
             this.txtCMND.TabIndex = 4;
             // 
             // txtSTK
             // 
-            this.txtSTK.Location = new System.Drawing.Point(399, 214);
+            this.txtSTK.Location = new System.Drawing.Point(399, 232);
             this.txtSTK.Name = "txtSTK";
-            this.txtSTK.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.70588F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSTK.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.10084F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSTK.Properties.Appearance.Options.UseFont = true;
             this.txtSTK.Size = new System.Drawing.Size(234, 30);
             this.txtSTK.TabIndex = 5;
             // 
             // txtSoDu
             // 
-            this.txtSoDu.Location = new System.Drawing.Point(399, 271);
+            this.txtSoDu.Location = new System.Drawing.Point(399, 292);
             this.txtSoDu.Name = "txtSoDu";
-            this.txtSoDu.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.70588F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoDu.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.10084F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoDu.Properties.Appearance.Options.UseFont = true;
             this.txtSoDu.Size = new System.Drawing.Size(234, 30);
             this.txtSoDu.TabIndex = 6;
@@ -137,11 +139,32 @@ namespace NGANHANG.SubForm
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
+            // lbChiNhanh
+            // 
+            this.lbChiNhanh.AutoSize = true;
+            this.lbChiNhanh.Font = new System.Drawing.Font("Times New Roman", 12.10084F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbChiNhanh.Location = new System.Drawing.Point(193, 126);
+            this.lbChiNhanh.Name = "lbChiNhanh";
+            this.lbChiNhanh.Size = new System.Drawing.Size(108, 24);
+            this.lbChiNhanh.TabIndex = 17;
+            this.lbChiNhanh.Text = "Chi nhánh:";
+            // 
+            // cmbChiNhanh
+            // 
+            this.cmbChiNhanh.Font = new System.Drawing.Font("Times New Roman", 12.10084F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbChiNhanh.FormattingEnabled = true;
+            this.cmbChiNhanh.Location = new System.Drawing.Point(399, 119);
+            this.cmbChiNhanh.Name = "cmbChiNhanh";
+            this.cmbChiNhanh.Size = new System.Drawing.Size(234, 31);
+            this.cmbChiNhanh.TabIndex = 18;
+            // 
             // FormMoTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(798, 511);
+            this.Controls.Add(this.cmbChiNhanh);
+            this.Controls.Add(this.lbChiNhanh);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnXacNhan);
             this.Controls.Add(this.txtSoDu);
@@ -173,5 +196,7 @@ namespace NGANHANG.SubForm
         private DevExpress.XtraEditors.TextEdit txtSoDu;
         private System.Windows.Forms.Button btnXacNhan;
         private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.Label lbChiNhanh;
+        private System.Windows.Forms.ComboBox cmbChiNhanh;
     }
 }

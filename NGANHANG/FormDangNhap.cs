@@ -32,6 +32,17 @@ namespace NGANHANG
             cmbChiNhanh.DisplayMember = "TENCN";
             cmbChiNhanh.ValueMember = "TENSERVER";
         }
+        private void LayDSPM(String cmd)
+        {
+            DataTable dt = new DataTable();
+            if (connPublisher.State == ConnectionState.Closed) connPublisher.Open();
+            SqlDataAdapter da = new SqlDataAdapter(cmd, connPublisher);
+            da.Fill(dt);
+            connPublisher.Close();
+            Program.bindingSource.DataSource = dt;
+            Program.bds_dspm.DataSource = dt;
+
+        }
         public frmDangNhap()
         {
             InitializeComponent();
@@ -68,6 +79,7 @@ namespace NGANHANG
             if (KetNoiDatabaseGoc() == 0)
                 return;
             //Lấy 2 cái đầu tiên của danh sách
+            LayDSPM("SELECT TOP 2 * FROM v_DSPM1");
             LayDanhSachPhanManh("SELECT * FROM v_DanhSachPhanManh");
             cmbChiNhanh.SelectedIndex = 1;
         }

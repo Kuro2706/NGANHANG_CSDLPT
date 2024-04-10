@@ -42,6 +42,7 @@ namespace NGANHANG.MenuForm
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSua = new DevExpress.XtraBars.BarButtonItem();
             this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
             this.btnGhi = new DevExpress.XtraBars.BarButtonItem();
             this.btnHoanTac = new DevExpress.XtraBars.BarButtonItem();
@@ -82,7 +83,6 @@ namespace NGANHANG.MenuForm
             this.bdsTaiKhoan = new System.Windows.Forms.BindingSource(this.components);
             this.bdsGDGoiRut = new System.Windows.Forms.BindingSource(this.components);
             this.gD_GOIRUTTableAdapter = new NGANHANG.NGANHANGDataSetTableAdapters.GD_GOIRUTTableAdapter();
-            this.btnSua = new DevExpress.XtraBars.BarButtonItem();
             lbCMND = new System.Windows.Forms.Label();
             lbHoTen = new System.Windows.Forms.Label();
             lbNgayCap = new System.Windows.Forms.Label();
@@ -236,6 +236,15 @@ namespace NGANHANG.MenuForm
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(80, 0);
             this.btnThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThem_ItemClick);
+            // 
+            // btnSua
+            // 
+            this.btnSua.Caption = "Sửa";
+            this.btnSua.Id = 8;
+            this.btnSua.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSua.ImageOptions.SvgImage")));
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(70, 0);
+            this.btnSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSua_ItemClick);
             // 
             // btnXoa
             // 
@@ -392,6 +401,7 @@ namespace NGANHANG.MenuForm
             // 
             this.gcKhachHang.DataSource = this.bdsKhachHang;
             this.gcKhachHang.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gcKhachHang.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gcKhachHang.Location = new System.Drawing.Point(0, 129);
             this.gcKhachHang.MainView = this.gridView1;
             this.gcKhachHang.MenuManager = this.barManager1;
@@ -417,6 +427,10 @@ namespace NGANHANG.MenuForm
             // 
             // colCMND
             // 
+            this.colCMND.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colCMND.AppearanceCell.Options.UseFont = true;
+            this.colCMND.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colCMND.AppearanceHeader.Options.UseFont = true;
             this.colCMND.FieldName = "CMND";
             this.colCMND.MinWidth = 25;
             this.colCMND.Name = "colCMND";
@@ -426,6 +440,10 @@ namespace NGANHANG.MenuForm
             // 
             // colHO
             // 
+            this.colHO.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colHO.AppearanceCell.Options.UseFont = true;
+            this.colHO.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colHO.AppearanceHeader.Options.UseFont = true;
             this.colHO.Caption = "Họ";
             this.colHO.FieldName = "HO";
             this.colHO.MinWidth = 25;
@@ -436,6 +454,10 @@ namespace NGANHANG.MenuForm
             // 
             // colTEN
             // 
+            this.colTEN.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colTEN.AppearanceCell.Options.UseFont = true;
+            this.colTEN.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colTEN.AppearanceHeader.Options.UseFont = true;
             this.colTEN.Caption = "Tên";
             this.colTEN.FieldName = "TEN";
             this.colTEN.MinWidth = 25;
@@ -446,6 +468,10 @@ namespace NGANHANG.MenuForm
             // 
             // colDIACHI
             // 
+            this.colDIACHI.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colDIACHI.AppearanceCell.Options.UseFont = true;
+            this.colDIACHI.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colDIACHI.AppearanceHeader.Options.UseFont = true;
             this.colDIACHI.Caption = "Địa chỉ";
             this.colDIACHI.FieldName = "DIACHI";
             this.colDIACHI.MinWidth = 25;
@@ -456,6 +482,10 @@ namespace NGANHANG.MenuForm
             // 
             // colPHAI
             // 
+            this.colPHAI.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colPHAI.AppearanceCell.Options.UseFont = true;
+            this.colPHAI.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colPHAI.AppearanceHeader.Options.UseFont = true;
             this.colPHAI.Caption = "Phái";
             this.colPHAI.FieldName = "PHAI";
             this.colPHAI.MinWidth = 25;
@@ -466,6 +496,10 @@ namespace NGANHANG.MenuForm
             // 
             // colNGAYCAP
             // 
+            this.colNGAYCAP.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colNGAYCAP.AppearanceCell.Options.UseFont = true;
+            this.colNGAYCAP.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colNGAYCAP.AppearanceHeader.Options.UseFont = true;
             this.colNGAYCAP.Caption = "Ngày cấp";
             this.colNGAYCAP.FieldName = "NGAYCAP";
             this.colNGAYCAP.MinWidth = 25;
@@ -476,6 +510,10 @@ namespace NGANHANG.MenuForm
             // 
             // colSODT
             // 
+            this.colSODT.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colSODT.AppearanceCell.Options.UseFont = true;
+            this.colSODT.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colSODT.AppearanceHeader.Options.UseFont = true;
             this.colSODT.Caption = "SĐT";
             this.colSODT.FieldName = "SODT";
             this.colSODT.MinWidth = 25;
@@ -486,6 +524,10 @@ namespace NGANHANG.MenuForm
             // 
             // colMACN
             // 
+            this.colMACN.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colMACN.AppearanceCell.Options.UseFont = true;
+            this.colMACN.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colMACN.AppearanceHeader.Options.UseFont = true;
             this.colMACN.Caption = "Mã chi nhánh";
             this.colMACN.FieldName = "MACN";
             this.colMACN.MinWidth = 25;
@@ -623,15 +665,6 @@ namespace NGANHANG.MenuForm
             // gD_GOIRUTTableAdapter
             // 
             this.gD_GOIRUTTableAdapter.ClearBeforeFill = true;
-            // 
-            // btnSua
-            // 
-            this.btnSua.Caption = "Sửa";
-            this.btnSua.Id = 8;
-            this.btnSua.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSua.ImageOptions.SvgImage")));
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(70, 0);
-            this.btnSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSua_ItemClick);
             // 
             // FormKH
             // 

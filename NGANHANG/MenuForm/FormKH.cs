@@ -56,7 +56,7 @@ namespace NGANHANG.MenuForm
             this.gD_GOIRUTTableAdapter.Fill(this.dataSet.GD_GOIRUT);
 
             MACN = ((DataRowView)bdsKhachHang[0])["MACN"].ToString();
-            cmbChiNhanh.DataSource = Program.bindingSource;/*sao chep bingding source tu form dang nhap*/
+            cmbChiNhanh.DataSource = Program.bds_dspm;/*sao chep bingding source tu form dang nhap*/
             cmbChiNhanh.DisplayMember = "TENCN";
             cmbChiNhanh.ValueMember = "TENSERVER";
             cmbChiNhanh.SelectedIndex = Program.mChiNhanh;
