@@ -446,6 +446,7 @@ namespace NGANHANG.MenuForm
             this.colMANV.FieldName = "MANV";
             this.colMANV.MinWidth = 25;
             this.colMANV.Name = "colMANV";
+            this.colMANV.OptionsColumn.ReadOnly = true;
             this.colMANV.Visible = true;
             this.colMANV.VisibleIndex = 0;
             this.colMANV.Width = 93;
@@ -460,6 +461,7 @@ namespace NGANHANG.MenuForm
             this.colHO.FieldName = "HO";
             this.colHO.MinWidth = 25;
             this.colHO.Name = "colHO";
+            this.colHO.OptionsColumn.ReadOnly = true;
             this.colHO.Visible = true;
             this.colHO.VisibleIndex = 1;
             this.colHO.Width = 93;
@@ -474,6 +476,7 @@ namespace NGANHANG.MenuForm
             this.colTEN.FieldName = "TEN";
             this.colTEN.MinWidth = 25;
             this.colTEN.Name = "colTEN";
+            this.colTEN.OptionsColumn.ReadOnly = true;
             this.colTEN.Visible = true;
             this.colTEN.VisibleIndex = 2;
             this.colTEN.Width = 93;
@@ -488,6 +491,7 @@ namespace NGANHANG.MenuForm
             this.colCMND.FieldName = "CMND";
             this.colCMND.MinWidth = 25;
             this.colCMND.Name = "colCMND";
+            this.colCMND.OptionsColumn.ReadOnly = true;
             this.colCMND.Visible = true;
             this.colCMND.VisibleIndex = 3;
             this.colCMND.Width = 93;
@@ -502,6 +506,7 @@ namespace NGANHANG.MenuForm
             this.colDIACHI.FieldName = "DIACHI";
             this.colDIACHI.MinWidth = 25;
             this.colDIACHI.Name = "colDIACHI";
+            this.colDIACHI.OptionsColumn.ReadOnly = true;
             this.colDIACHI.Visible = true;
             this.colDIACHI.VisibleIndex = 4;
             this.colDIACHI.Width = 93;
@@ -516,6 +521,7 @@ namespace NGANHANG.MenuForm
             this.colPHAI.FieldName = "PHAI";
             this.colPHAI.MinWidth = 25;
             this.colPHAI.Name = "colPHAI";
+            this.colPHAI.OptionsColumn.ReadOnly = true;
             this.colPHAI.Visible = true;
             this.colPHAI.VisibleIndex = 5;
             this.colPHAI.Width = 93;
@@ -530,6 +536,7 @@ namespace NGANHANG.MenuForm
             this.colSODT.FieldName = "SODT";
             this.colSODT.MinWidth = 25;
             this.colSODT.Name = "colSODT";
+            this.colSODT.OptionsColumn.ReadOnly = true;
             this.colSODT.Visible = true;
             this.colSODT.VisibleIndex = 6;
             this.colSODT.Width = 93;
@@ -544,6 +551,7 @@ namespace NGANHANG.MenuForm
             this.colMACN.FieldName = "MACN";
             this.colMACN.MinWidth = 25;
             this.colMACN.Name = "colMACN";
+            this.colMACN.OptionsColumn.ReadOnly = true;
             this.colMACN.Visible = true;
             this.colMACN.VisibleIndex = 7;
             this.colMACN.Width = 93;
@@ -558,6 +566,7 @@ namespace NGANHANG.MenuForm
             this.colTrangThaiXoa.FieldName = "TrangThaiXoa";
             this.colTrangThaiXoa.MinWidth = 25;
             this.colTrangThaiXoa.Name = "colTrangThaiXoa";
+            this.colTrangThaiXoa.OptionsColumn.ReadOnly = true;
             this.colTrangThaiXoa.Visible = true;
             this.colTrangThaiXoa.VisibleIndex = 8;
             this.colTrangThaiXoa.Width = 93;

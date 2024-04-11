@@ -716,7 +716,7 @@ namespace NGANHANG.MenuForm
                 if (result2 == 1)
                 {
                     MessageBox.Show("CMND đã tồn tại", "Thông báo", MessageBoxButtons.OK);
-                    txtSDT.Focus();
+                    txtCMND.Focus();
                     return false;
                 }
 
@@ -748,7 +748,7 @@ namespace NGANHANG.MenuForm
                 if (result3 == 1)
                 {
                     MessageBox.Show("Nhân viên đã tồn tại", "Thông báo", MessageBoxButtons.OK);
-                    txtSDT.Focus();
+                    txtMANV.Focus();
                     return false;
                 }
             }

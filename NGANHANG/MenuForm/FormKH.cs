@@ -1,5 +1,4 @@
 ﻿using DevExpress.XtraEditors;
-using NGANHANG.SubForm;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -528,25 +527,11 @@ namespace NGANHANG.MenuForm
                 if (result3 == 1)
                 {
                     MessageBox.Show("CMND đã được sử dụng", "Thông báo", MessageBoxButtons.OK);
-                    txtSDT.Focus();
+                    txtCMND.Focus();
                     return false;
                 }
             }
             return true;
-        }
-
-        private void btnMoTaiKhoan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            Form f = this.CheckExists(typeof(FormMoTaiKhoan));
-            if (f != null)
-            {
-                f.Activate();
-            }
-            else
-            {
-                FormMoTaiKhoan form = new FormMoTaiKhoan();
-                form.Show();
-            }
         }
     }
 }

@@ -62,7 +62,7 @@ namespace NGANHANG.SubForm
             this.lbCMND.Font = new System.Drawing.Font("Times New Roman", 12.10084F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCMND.Location = new System.Drawing.Point(193, 183);
             this.lbCMND.Name = "lbCMND";
-            this.lbCMND.Size = new System.Drawing.Size(81, 24);
+            this.lbCMND.Size = new System.Drawing.Size(77, 23);
             this.lbCMND.TabIndex = 1;
             this.lbCMND.Text = "CMND:";
             // 
@@ -72,7 +72,7 @@ namespace NGANHANG.SubForm
             this.lbSTK.Font = new System.Drawing.Font("Times New Roman", 12.10084F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSTK.Location = new System.Drawing.Point(192, 238);
             this.lbSTK.Name = "lbSTK";
-            this.lbSTK.Size = new System.Drawing.Size(128, 24);
+            this.lbSTK.Size = new System.Drawing.Size(121, 23);
             this.lbSTK.TabIndex = 2;
             this.lbSTK.Text = "Số tài khoản:";
             // 
@@ -82,7 +82,7 @@ namespace NGANHANG.SubForm
             this.lbSoDu.Font = new System.Drawing.Font("Times New Roman", 12.10084F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSoDu.Location = new System.Drawing.Point(192, 295);
             this.lbSoDu.Name = "lbSoDu";
-            this.lbSoDu.Size = new System.Drawing.Size(69, 24);
+            this.lbSoDu.Size = new System.Drawing.Size(65, 23);
             this.lbSoDu.TabIndex = 3;
             this.lbSoDu.Text = "Số dư:";
             // 
@@ -145,17 +145,17 @@ namespace NGANHANG.SubForm
             this.lbChiNhanh.Font = new System.Drawing.Font("Times New Roman", 12.10084F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbChiNhanh.Location = new System.Drawing.Point(193, 126);
             this.lbChiNhanh.Name = "lbChiNhanh";
-            this.lbChiNhanh.Size = new System.Drawing.Size(108, 24);
+            this.lbChiNhanh.Size = new System.Drawing.Size(101, 23);
             this.lbChiNhanh.TabIndex = 17;
             this.lbChiNhanh.Text = "Chi nhánh:";
             // 
             // cmbChiNhanh
             // 
-            this.cmbChiNhanh.Font = new System.Drawing.Font("Times New Roman", 12.10084F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbChiNhanh.Font = new System.Drawing.Font("Times New Roman", 12.10084F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbChiNhanh.FormattingEnabled = true;
-            this.cmbChiNhanh.Location = new System.Drawing.Point(399, 119);
+            this.cmbChiNhanh.Location = new System.Drawing.Point(399, 122);
             this.cmbChiNhanh.Name = "cmbChiNhanh";
-            this.cmbChiNhanh.Size = new System.Drawing.Size(234, 31);
+            this.cmbChiNhanh.Size = new System.Drawing.Size(234, 30);
             this.cmbChiNhanh.TabIndex = 18;
             // 
             // FormMoTaiKhoan
@@ -177,6 +177,7 @@ namespace NGANHANG.SubForm
             this.Name = "FormMoTaiKhoan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMoTaiKhoan";
+            this.Load += new System.EventHandler(this.FormMoTaiKhoan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtCMND.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSTK.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoDu.Properties)).EndInit();

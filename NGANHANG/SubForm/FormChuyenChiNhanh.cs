@@ -19,10 +19,9 @@ namespace NGANHANG.SubForm
         }
         private void FormChuyenChiNhanh_Load(object sender, EventArgs e)
         {
-            cmbChiNhanh.DataSource = Program.bindingSource.DataSource;
+            cmbChiNhanh.DataSource = Program.bds_dspm.DataSource;
             cmbChiNhanh.DisplayMember = "TENCN";
             cmbChiNhanh.ValueMember = "TENSERVER";
-          //  cmbChiNhanh.SelectedIndexChanged = Program.mChiNhanh;
         }
         private Form CheckExists(Type ftype)
         {

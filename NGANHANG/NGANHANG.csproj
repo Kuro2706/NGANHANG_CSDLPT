@@ -66,12 +66,6 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuForm\FormGD.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MenuForm\FormGD.Designer.cs">
-      <DependentUpon>FormGD.cs</DependentUpon>
-    </Compile>
     <Compile Include="MenuForm\FormKH.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuForm\FormNV.resx">
       <DependentUpon>FormNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuForm\FormTK.resx">
+      <DependentUpon>FormTK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

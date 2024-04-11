@@ -36,8 +36,6 @@ namespace NGANHANG
 
                 pageQuanLy.Visible = true;
                 pageBaoCao.Visible = true;
-                btnGiaoDich.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                pageKH.Visible = false;
             }
             if(Program.mGroup == "CHINHANH")
             {
@@ -48,8 +46,6 @@ namespace NGANHANG
 
                 pageQuanLy.Visible = true;
                 pageBaoCao.Visible = true;
-                btnGiaoDich.Enabled = true;
-                pageKH.Visible = false;
             }
             
         }
@@ -64,7 +60,7 @@ namespace NGANHANG
 
             pageQuanLy.Visible = false;
             pageBaoCao.Visible = false;
-            pageKH.Visible = true;
+
         }
         private void logout()
         {
@@ -151,24 +147,9 @@ namespace NGANHANG
             }
         }
 
-        private void btnGiaoDich_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            Form f = this.CheckExists(typeof(FormKH));
-            if (f != null)
-            {
-                f.Activate();
-            }
-            else
-            {
-                FormGD form = new FormGD();
-                form.MdiParent = this;
-                form.Show();
-            }
-        }
-
         private void btnTaiKhoan_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form f = this.CheckExists(typeof(FormKH));
+            Form f = this.CheckExists(typeof(FormTK));
             if (f != null)
             {
                 f.Activate();
