@@ -161,10 +161,10 @@ namespace NGANHANG.MenuForm
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 641);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 634);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1498, 20);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1498, 27);
             // 
             // barDockControlLeft
             // 
@@ -173,7 +173,7 @@ namespace NGANHANG.MenuForm
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 29);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 612);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 605);
             // 
             // barDockControlRight
             // 
@@ -182,7 +182,7 @@ namespace NGANHANG.MenuForm
             this.barDockControlRight.Location = new System.Drawing.Point(1498, 29);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 612);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 605);
             // 
             // dataSet
             // 
@@ -268,7 +268,7 @@ namespace NGANHANG.MenuForm
             this.gcTaiKhoan.MainView = this.gridView1;
             this.gcTaiKhoan.MenuManager = this.barManager1;
             this.gcTaiKhoan.Name = "gcTaiKhoan";
-            this.gcTaiKhoan.Size = new System.Drawing.Size(1498, 504);
+            this.gcTaiKhoan.Size = new System.Drawing.Size(1498, 497);
             this.gcTaiKhoan.TabIndex = 11;
             this.gcTaiKhoan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -285,6 +285,11 @@ namespace NGANHANG.MenuForm
             // 
             // colSOTK
             // 
+            this.colSOTK.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colSOTK.AppearanceCell.Options.UseFont = true;
+            this.colSOTK.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colSOTK.AppearanceHeader.Options.UseFont = true;
+            this.colSOTK.Caption = "Số tài khoản";
             this.colSOTK.FieldName = "SOTK";
             this.colSOTK.MinWidth = 25;
             this.colSOTK.Name = "colSOTK";
@@ -295,6 +300,10 @@ namespace NGANHANG.MenuForm
             // 
             // colCMND1
             // 
+            this.colCMND1.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colCMND1.AppearanceCell.Options.UseFont = true;
+            this.colCMND1.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colCMND1.AppearanceHeader.Options.UseFont = true;
             this.colCMND1.FieldName = "CMND";
             this.colCMND1.MinWidth = 25;
             this.colCMND1.Name = "colCMND1";
@@ -305,6 +314,11 @@ namespace NGANHANG.MenuForm
             // 
             // colSODU
             // 
+            this.colSODU.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colSODU.AppearanceCell.Options.UseFont = true;
+            this.colSODU.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colSODU.AppearanceHeader.Options.UseFont = true;
+            this.colSODU.Caption = "Số dư";
             this.colSODU.FieldName = "SODU";
             this.colSODU.MinWidth = 25;
             this.colSODU.Name = "colSODU";
@@ -315,6 +329,11 @@ namespace NGANHANG.MenuForm
             // 
             // colMACN
             // 
+            this.colMACN.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colMACN.AppearanceCell.Options.UseFont = true;
+            this.colMACN.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colMACN.AppearanceHeader.Options.UseFont = true;
+            this.colMACN.Caption = "Mã chi nhánh";
             this.colMACN.FieldName = "MACN";
             this.colMACN.MinWidth = 25;
             this.colMACN.Name = "colMACN";

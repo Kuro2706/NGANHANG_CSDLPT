@@ -35,6 +35,7 @@ namespace NGANHANG
                 btnThoat.Enabled = true;
 
                 pageQuanLy.Visible = true;
+                pageNghiepVu.Visible = false;
                 pageBaoCao.Visible = true;
             }
             if(Program.mGroup == "CHINHANH")
@@ -45,6 +46,7 @@ namespace NGANHANG
                 btnThoat.Enabled = true;
 
                 pageQuanLy.Visible = true;
+                pageNghiepVu.Visible = true;
                 pageBaoCao.Visible = true;
             }
             
@@ -59,7 +61,10 @@ namespace NGANHANG
             btnTaoTaiKhoan.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
 
             pageQuanLy.Visible = false;
-            pageBaoCao.Visible = false;
+            pageNghiepVu.Visible = false;
+            pageBaoCao.Visible = true;
+            btnLietKeKhachHang.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            btnLietKeTaiKhoan.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
 
         }
         private void logout()
@@ -82,7 +87,6 @@ namespace NGANHANG
             else
             {
                 frmDangNhap form = new frmDangNhap();
-                //form.MdiParent = this;
                 form.Show();
             }
         }
@@ -94,6 +98,7 @@ namespace NGANHANG
             btnDangNhap.Enabled = true;
             btnDangXuat.Enabled = false;
             btnTaoTaiKhoan.Enabled = false;
+            btnTaoTaiKhoan.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             pageQuanLy.Visible = false;
             pageBaoCao.Visible = false;
 
@@ -111,6 +116,20 @@ namespace NGANHANG
             Program.frmMain.MANHANVIEN.Text = "MÃ NHÂN VIÊN:";
             Program.frmMain.HOTEN.Text = "HỌ TÊN:";
             Program.frmMain.NHOM.Text = "VAI TRÒ:";
+        }
+        private void btnTaoTaiKhoan_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form f = this.CheckExists(typeof(FormTaoTaiKhoan));
+            if (f != null)
+            {
+                f.Activate();
+            }
+            else
+            {
+                FormTaoTaiKhoan form = new FormTaoTaiKhoan();
+                form.MdiParent = this;
+                form.Show();
+            }
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -157,6 +176,36 @@ namespace NGANHANG
             else
             {
                 FormTK form = new FormTK();
+                form.MdiParent = this;
+                form.Show();
+            }
+        }
+
+        private void btnGDChuyenTien_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form f = this.CheckExists(typeof(FormChuyenTien));
+            if (f != null)
+            {
+                f.Activate();
+            }
+            else
+            {
+                FormChuyenTien form = new FormChuyenTien();
+                form.MdiParent = this;
+                form.Show();
+            }
+        }
+
+        private void btnGDGoiRut_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form f = this.CheckExists(typeof(FormGoiRut));
+            if (f != null)
+            {
+                f.Activate();
+            }
+            else
+            {
+                FormGoiRut form = new FormGoiRut();
                 form.MdiParent = this;
                 form.Show();
             }

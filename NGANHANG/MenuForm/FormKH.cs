@@ -383,7 +383,6 @@ namespace NGANHANG.MenuForm
                 txtHo.Focus();
                 return false;
             }
-
             if (Regex.IsMatch(txtHo.Text, @"^[A-Za-zÀ-ỹ ]+$") == false)
             {
                 MessageBox.Show("Họ của người chỉ có chữ cái và khoảng trắng", "Thông báo", MessageBoxButtons.OK);
@@ -409,7 +408,6 @@ namespace NGANHANG.MenuForm
                 txtTen.Focus();
                 return false;
             }
-
             if (txtTen.Text.Length > 10)
             {
                 MessageBox.Show("Tên không thể lớn hơn 10 kí tự", "Thông báo", MessageBoxButtons.OK);
@@ -424,14 +422,12 @@ namespace NGANHANG.MenuForm
                 txtDiaChi.Focus();
                 return false;
             }
-
             if (Regex.IsMatch(txtDiaChi.Text, @"^[A-Za-zÀ-ỹ0-9, ]+$") == false)
             {
                 MessageBox.Show("Địa chỉ chỉ chấp nhận chữ cái, số và khoảng trắng", "Thông báo", MessageBoxButtons.OK);
                 txtDiaChi.Focus();
                 return false;
             }
-
             if (txtDiaChi.Text.Length > 100)
             {
                 MessageBox.Show("Địa chỉ không thể lớn hơn 100 kí tự", "Thông báo", MessageBoxButtons.OK);

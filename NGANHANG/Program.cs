@@ -33,8 +33,10 @@ namespace NGANHANG
         public static String mHoten = "";
         public static int mChiNhanh = 0;
         public static Dictionary<String, String> DSPM = new Dictionary<String, String>();
-        /*public static DataTable chiNhanhDT = new DataTable();
-        public static DataGridViewRow nvChuaTaiKhoan = null;*/
+
+        public static string manvduocchon = "";
+        public static string hoten = "";
+        public static string diachi = "";
 
         public static frmMain frmMain;
 

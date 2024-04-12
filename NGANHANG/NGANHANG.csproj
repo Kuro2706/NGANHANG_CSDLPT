@@ -66,6 +66,18 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuForm\FormChuyenTien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuForm\FormChuyenTien.Designer.cs">
+      <DependentUpon>FormChuyenTien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuForm\FormGoiRut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuForm\FormGoiRut.Designer.cs">
+      <DependentUpon>FormGoiRut.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuForm\FormKH.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +89,12 @@
     </Compile>
     <Compile Include="MenuForm\FormNV.Designer.cs">
       <DependentUpon>FormNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuForm\FormTaoTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuForm\FormTaoTaiKhoan.Designer.cs">
+      <DependentUpon>FormTaoTaiKhoan.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuForm\FormTK.cs">
       <SubType>Form</SubType>
@@ -94,6 +112,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubForm\FormChonNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\FormChonNV.Designer.cs">
+      <DependentUpon>FormChonNV.cs</DependentUpon>
+    </Compile>
     <Compile Include="SubForm\FormChuyenChiNhanh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +142,9 @@
     <EmbeddedResource Include="MenuForm\FormNV.resx">
       <DependentUpon>FormNV.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MenuForm\FormTaoTaiKhoan.resx">
+      <DependentUpon>FormTaoTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuForm\FormTK.resx">
       <DependentUpon>FormTK.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,6 +153,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\FormChonNV.resx">
+      <DependentUpon>FormChonNV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubForm\FormChuyenChiNhanh.resx">
       <DependentUpon>FormChuyenChiNhanh.cs</DependentUpon>

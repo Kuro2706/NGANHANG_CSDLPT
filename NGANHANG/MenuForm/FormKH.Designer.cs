@@ -319,10 +319,10 @@ namespace NGANHANG.MenuForm
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 658);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 651);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1498, 20);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1498, 27);
             // 
             // barDockControlLeft
             // 
@@ -331,7 +331,7 @@ namespace NGANHANG.MenuForm
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 29);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 629);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 622);
             // 
             // barDockControlRight
             // 
@@ -340,7 +340,7 @@ namespace NGANHANG.MenuForm
             this.barDockControlRight.Location = new System.Drawing.Point(1498, 29);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 629);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 622);
             // 
             // panelControl1
             // 
@@ -561,7 +561,7 @@ namespace NGANHANG.MenuForm
             this.panelNhapLieu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelNhapLieu.Location = new System.Drawing.Point(0, 349);
             this.panelNhapLieu.Name = "panelNhapLieu";
-            this.panelNhapLieu.Size = new System.Drawing.Size(1498, 309);
+            this.panelNhapLieu.Size = new System.Drawing.Size(1498, 302);
             this.panelNhapLieu.TabIndex = 14;
             // 
             // txtMACN
