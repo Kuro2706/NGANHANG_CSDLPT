@@ -47,15 +47,19 @@ namespace NGANHANG.MenuForm
 
             if (Program.mGroup == "NGANHANG")
             {
+                cmbChiNhanh.Enabled = true;
                 this.btnLamMoi.Enabled = true;
                 this.btnMoTaiKhoan.Enabled = false;
+                this.btnXoa.Enabled = false;
                 this.btnTHOAT.Enabled = true;
             }
 
             if (Program.mGroup == "CHINHANH")
             {
+                cmbChiNhanh.Enabled = false;
                 this.btnLamMoi.Enabled = true;
                 this.btnMoTaiKhoan.Enabled = true;
+                this.btnXoa.Enabled = true;
                 this.btnTHOAT.Enabled = true;
             }
             cmbChiNhanh.DataSource = Program.bds_dspm;/*sao chep bingding source tu form dang nhap*/

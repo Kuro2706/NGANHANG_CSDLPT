@@ -17,5 +17,20 @@ namespace NGANHANG.MenuForm
         {
             InitializeComponent();
         }
+
+        private void gD_GOIRUTBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.bdsGDGoiRut.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.dataSet);
+
+        }
+
+        private void FormGoiRut_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'nGANHANGDataSet.GD_GOIRUT' table. You can move, or remove it, as needed.
+            this.gD_GOIRUTTableAdapter.Fill(this.dataSet.GD_GOIRUT);
+
+        }
     }
 }

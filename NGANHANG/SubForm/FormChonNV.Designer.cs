@@ -68,15 +68,6 @@ namespace NGANHANG.SubForm
             this.panelControl1.Size = new System.Drawing.Size(1498, 100);
             this.panelControl1.TabIndex = 5;
             // 
-            // cmbChiNhanh
-            // 
-            this.cmbChiNhanh.FormattingEnabled = true;
-            this.cmbChiNhanh.Location = new System.Drawing.Point(243, 39);
-            this.cmbChiNhanh.Name = "cmbChiNhanh";
-            this.cmbChiNhanh.Size = new System.Drawing.Size(257, 24);
-            this.cmbChiNhanh.TabIndex = 1;
-            this.cmbChiNhanh.SelectedIndexChanged += new System.EventHandler(this.cmbChiNhanh_SelectedIndexChanged);
-            // 
             // lbChiNhanh
             // 
             this.lbChiNhanh.AutoSize = true;

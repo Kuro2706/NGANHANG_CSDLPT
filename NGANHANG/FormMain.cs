@@ -25,6 +25,19 @@ namespace NGANHANG
                     return f;
             return null;
         }
+        public static Boolean CheckExitedForm(String type)
+        {
+            FormCollection fc = Application.OpenForms;
+            foreach (Form frm in fc)
+            {
+                //iterate through
+                if (frm.Name == type)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
         public void enableButtons()
         {
             if(Program.mGroup == "NGANHANG")

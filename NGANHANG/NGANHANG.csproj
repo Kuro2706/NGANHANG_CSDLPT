@@ -118,6 +118,12 @@
     <Compile Include="SubForm\FormChonNV.Designer.cs">
       <DependentUpon>FormChonNV.cs</DependentUpon>
     </Compile>
+    <Compile Include="SubForm\FormChonTK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\FormChonTK.Designer.cs">
+      <DependentUpon>FormChonTK.cs</DependentUpon>
+    </Compile>
     <Compile Include="SubForm\FormChuyenChiNhanh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuForm\FormChuyenTien.resx">
+      <DependentUpon>FormChuyenTien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuForm\FormGoiRut.resx">
+      <DependentUpon>FormGoiRut.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuForm\FormKH.resx">
       <DependentUpon>FormKH.cs</DependentUpon>
@@ -156,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SubForm\FormChonNV.resx">
       <DependentUpon>FormChonNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\FormChonTK.resx">
+      <DependentUpon>FormChonTK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubForm\FormChuyenChiNhanh.resx">
       <DependentUpon>FormChuyenChiNhanh.cs</DependentUpon>

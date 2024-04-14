@@ -1,6 +1,8 @@
 ﻿using DevExpress.LookAndFeel;
 using DevExpress.Skins;
 using DevExpress.UserSkins;
+using NGANHANG.MenuForm;
+using NGANHANG.SubForm;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -39,6 +41,19 @@ namespace NGANHANG
         public static string diachi = "";
 
         public static frmMain frmMain;
+        public static frmDangNhap frmDangNhap;
+
+        public static FormNV formNV;
+        public static FormKH formKH;
+        public static FormTK formTK;
+        public static FormTaoTaiKhoan formTaoTaiKhoan;
+        public static FormChuyenTien formChuyenTien;
+        public static FormGoiRut formGoiRut;
+
+        public static FormChonNV formChonNV;
+        public static FormChonTK formChonTK;
+        public static FormChuyenChiNhanh formChuyenChiNhanh;
+        public static FormMoTaiKhoan formMoTaiKhoan;
 
         public static BindingSource bindingSource = new BindingSource();
         /// <summary>

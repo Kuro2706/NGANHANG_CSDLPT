@@ -17,5 +17,20 @@ namespace NGANHANG.MenuForm
         {
             InitializeComponent();
         }
+
+        private void gD_CHUYENTIENBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.bdsGDChuyenTien.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.dataSet);
+
+        }
+
+        private void FormChuyenTien_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'nGANHANGDataSet.GD_CHUYENTIEN' table. You can move, or remove it, as needed.
+            this.gD_CHUYENTIENTableAdapter.Fill(this.dataSet.GD_CHUYENTIEN);
+
+        }
     }
 }

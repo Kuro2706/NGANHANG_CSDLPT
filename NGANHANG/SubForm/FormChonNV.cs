@@ -36,9 +36,13 @@ namespace NGANHANG.SubForm
             cmbChiNhanh.DisplayMember = "TENCN";
             cmbChiNhanh.ValueMember = "TENSERVER";
             cmbChiNhanh.SelectedIndex = Program.mChiNhanh;
-            if (Program.mGroup == "CONGTY")
+            if (Program.mGroup == "NGANHANG")
             {
                 cmbChiNhanh.Enabled = true;
+            }
+            if (Program.mGroup == "CHINHANH")
+            {
+                cmbChiNhanh.Enabled = false;
             }
         }
 
