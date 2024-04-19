@@ -20,7 +20,7 @@ namespace NGANHANG.MenuForm
         private string matkhau = "";
         private string manv = "";
         private string vaitro = "";
-
+        
         private Form CheckExists(Type ftype)
         {
             foreach (Form f in this.MdiChildren)
@@ -42,7 +42,8 @@ namespace NGANHANG.MenuForm
 
         private void FormTaoTaiKhoan_Load(Object sender, EventArgs e)
         {
-            if(Program.mGroup == "NGANHANG")
+            txtMANV.Enabled = false;
+            if (Program.mGroup == "NGANHANG")
             {
                 vaitro = "NGANHANG";
                 rbNganHang.Checked = true;
@@ -138,14 +139,14 @@ namespace NGANHANG.MenuForm
             Console.WriteLine(matkhau);
             Console.WriteLine(manv);
             Console.WriteLine(vaitro);
-            String cauTruyVan =
+            String cauTruyVan6 =
                     "EXEC sp_TaoTaiKhoan '" + taikhoan + "' , '" + matkhau + "', '"
                     + manv + "', '" + vaitro + "'";
 
-            SqlCommand sqlCommand = new SqlCommand(cauTruyVan, Program.conn);
+            SqlCommand sqlCommand6 = new SqlCommand(cauTruyVan6, Program.conn);
             try
             {
-                Program.myReader = Program.ExecSqlDataReader(cauTruyVan);
+                Program.myReader = Program.ExecSqlDataReader(cauTruyVan6);
                 /*khong co ket qua tra ve thi ket thuc luon*/
                 if (Program.myReader == null)
                 {

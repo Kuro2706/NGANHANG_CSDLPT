@@ -133,7 +133,7 @@ namespace NGANHANG.MenuForm
                 MessageBox.Show("Không thể xóa tài khoản đã phát sinh giao dịch", "Thông báo", MessageBoxButtons.OK);
             }
 
-            if (MessageBox.Show("Xoá khách hàng này?", "Thông báo",
+            if (MessageBox.Show("Xoá tài khoản này?", "Thông báo",
                 MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 try
@@ -148,7 +148,7 @@ namespace NGANHANG.MenuForm
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi xóa khách hàng. Hãy thử lại\n" + ex.Message, "Thông báo", MessageBoxButtons.OK);
+                    MessageBox.Show("Lỗi xóa tài khoản. Hãy thử lại\n" + ex.Message, "Thông báo", MessageBoxButtons.OK);
                     this.taiKhoanTableAdapter.Fill(this.dataSet.TaiKhoan);
                     return;
                 }

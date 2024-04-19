@@ -67,15 +67,15 @@ namespace NGANHANG.SubForm
                     MessageBox.Show("Số tài khoản phải đủ 9 số", "Thông báo", MessageBoxButtons.OK);
                 }
 
-                String cauTruyVan4 = "DECLARE @RETURN INT ;" +
+                String cauTruyVan7 = "DECLARE @RETURN INT ;" +
                   "EXEC @RETURN  = SP_KIEMTRASOTAIKHOAN " +
                   "@SOTK ='" + txtSTK.Text.ToString().Trim() + "';" +
                   "SELECT 'RETURN_VALUE' = @RETURN";
-                Console.WriteLine(cauTruyVan4);
-                SqlCommand sqlCommand3 = new SqlCommand(cauTruyVan4, Program.conn);
+                Console.WriteLine(cauTruyVan7);
+                SqlCommand sqlCommand7 = new SqlCommand(cauTruyVan7, Program.conn);
                 try
                 {
-                    Program.myReader = Program.ExecSqlDataReader(cauTruyVan4);
+                    Program.myReader = Program.ExecSqlDataReader(cauTruyVan7);
                     if (Program.myReader == null)
                     {
                         return false;
@@ -89,10 +89,10 @@ namespace NGANHANG.SubForm
                     return false;
                 }
                 Program.myReader.Read();
-                int result4 = int.Parse(Program.myReader.GetValue(0).ToString());
+                int result7 = int.Parse(Program.myReader.GetValue(0).ToString());
                 Program.myReader.Close();
-                Console.WriteLine(result4);
-                if (result4 == 1)
+                Console.WriteLine(result7);
+                if (result7 == 1)
                 {
                     MessageBox.Show("Số tài khoản đã tồn tại", "Thông báo", MessageBoxButtons.OK);
                     txtSTK.Focus();

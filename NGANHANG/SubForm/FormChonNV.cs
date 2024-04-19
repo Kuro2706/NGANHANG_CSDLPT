@@ -13,6 +13,13 @@ namespace NGANHANG.SubForm
 {
     public partial class FormChonNV : DevExpress.XtraEditors.XtraForm
     {
+        private Form CheckExists(Type ftype)
+        {
+            foreach (Form f in this.MdiChildren)
+                if (f.GetType() == ftype)
+                    return f;
+            return null;
+        }
         public FormChonNV()
         {
             InitializeComponent();
@@ -53,33 +60,7 @@ namespace NGANHANG.SubForm
 
         private void cmbChiNhanh_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbChiNhanh.SelectedValue.ToString() == "System.Data.DataRowView")
-                return;
-            Program.servername = cmbChiNhanh.SelectedValue.ToString();
 
-            /*Neu chon sang chi nhanh khac voi chi nhanh hien tai*/
-            if (cmbChiNhanh.SelectedIndex != Program.mChiNhanh)
-            {
-                Program.loginName = Program.remoteLogin;
-                Program.loginPassword = Program.remotePassword;
-            }
-            /*Neu chon trung voi chi nhanh dang dang nhap o formDangNhap*/
-            else
-            {
-                Program.loginName = Program.currentLogin;
-                Program.loginPassword = Program.currentPassword;
-            }
-
-            if (Program.KetNoi() == 0)
-            {
-                MessageBox.Show("Xảy ra lỗi kết nối với chi nhánh hiện tại", "Thông báo", MessageBoxButtons.OK);
-            }
-            else
-            {
-                /*Do du lieu tu dataSet vao grid Control*/
-                this.nhanVienTableAdapter.Connection.ConnectionString = Program.connstr;
-                this.nhanVienTableAdapter.Fill(this.dataSet.NhanVien);
-            }
         }
 
         private void btnChon_Click(object sender, EventArgs e)

@@ -30,9 +30,6 @@ namespace NGANHANG.SubForm
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.cmbChiNhanh = new System.Windows.Forms.ComboBox();
-            this.lbChiNhanh = new System.Windows.Forms.Label();
             this.dataSet = new NGANHANG.NGANHANGDataSet();
             this.bdsNhanVien = new System.Windows.Forms.BindingSource(this.components);
             this.nhanVienTableAdapter = new NGANHANG.NGANHANGDataSetTableAdapters.NhanVienTableAdapter();
@@ -50,32 +47,16 @@ namespace NGANHANG.SubForm
             this.colTrangThaiXoa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnChon = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.cmbChiNhanh = new System.Windows.Forms.ComboBox();
+            this.lbChiNhanh = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsNhanVien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhanVienGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panelControl1
-            // 
-            this.panelControl1.Controls.Add(this.cmbChiNhanh);
-            this.panelControl1.Controls.Add(this.lbChiNhanh);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(0, 0);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1498, 100);
-            this.panelControl1.TabIndex = 5;
-            // 
-            // lbChiNhanh
-            // 
-            this.lbChiNhanh.AutoSize = true;
-            this.lbChiNhanh.Location = new System.Drawing.Point(136, 42);
-            this.lbChiNhanh.Name = "lbChiNhanh";
-            this.lbChiNhanh.Size = new System.Drawing.Size(71, 17);
-            this.lbChiNhanh.TabIndex = 0;
-            this.lbChiNhanh.Text = "Chi Nhánh";
             // 
             // dataSet
             // 
@@ -105,7 +86,6 @@ namespace NGANHANG.SubForm
             // nhanVienGridControl
             // 
             this.nhanVienGridControl.DataSource = this.bdsNhanVien;
-            this.nhanVienGridControl.Dock = System.Windows.Forms.DockStyle.Top;
             this.nhanVienGridControl.Location = new System.Drawing.Point(0, 100);
             this.nhanVienGridControl.MainView = this.gridView1;
             this.nhanVienGridControl.Name = "nhanVienGridControl";
@@ -288,35 +268,58 @@ namespace NGANHANG.SubForm
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.cmbChiNhanh);
+            this.panelControl1.Controls.Add(this.lbChiNhanh);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl1.Location = new System.Drawing.Point(0, 0);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(1498, 100);
+            this.panelControl1.TabIndex = 19;
+            // 
+            // cmbChiNhanh
+            // 
+            this.cmbChiNhanh.FormattingEnabled = true;
+            this.cmbChiNhanh.Location = new System.Drawing.Point(243, 39);
+            this.cmbChiNhanh.Name = "cmbChiNhanh";
+            this.cmbChiNhanh.Size = new System.Drawing.Size(257, 24);
+            this.cmbChiNhanh.TabIndex = 1;
+            // 
+            // lbChiNhanh
+            // 
+            this.lbChiNhanh.AutoSize = true;
+            this.lbChiNhanh.Location = new System.Drawing.Point(136, 42);
+            this.lbChiNhanh.Name = "lbChiNhanh";
+            this.lbChiNhanh.Size = new System.Drawing.Size(71, 17);
+            this.lbChiNhanh.TabIndex = 0;
+            this.lbChiNhanh.Text = "Chi Nhánh";
+            // 
             // FormChonNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1498, 569);
+            this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnChon);
             this.Controls.Add(this.nhanVienGridControl);
-            this.Controls.Add(this.panelControl1);
             this.Name = "FormChonNV";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormChonNV";
             this.Load += new System.EventHandler(this.FormChonNV_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
-            this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsNhanVien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhanVienGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
+            this.panelControl1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private DevExpress.XtraEditors.PanelControl panelControl1;
-        private System.Windows.Forms.ComboBox cmbChiNhanh;
-        private System.Windows.Forms.Label lbChiNhanh;
         private NGANHANGDataSet dataSet;
         private System.Windows.Forms.BindingSource bdsNhanVien;
         private NGANHANGDataSetTableAdapters.NhanVienTableAdapter nhanVienTableAdapter;
@@ -334,5 +337,8 @@ namespace NGANHANG.SubForm
         private DevExpress.XtraGrid.Columns.GridColumn colTrangThaiXoa;
         private System.Windows.Forms.Button btnChon;
         private System.Windows.Forms.Button btnThoat;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private System.Windows.Forms.ComboBox cmbChiNhanh;
+        private System.Windows.Forms.Label lbChiNhanh;
     }
 }

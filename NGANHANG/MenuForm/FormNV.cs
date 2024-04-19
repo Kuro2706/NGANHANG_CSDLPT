@@ -176,6 +176,7 @@ namespace NGANHANG.MenuForm
         {
             ViTri = bdsNhanVien.Position;
             this.panelNhapLieu.Enabled = true;
+            this.txtMANV.Enabled = false;
             this.txtCMND.Enabled = false;
             this.txtMACN.Enabled = false;
 
@@ -450,6 +451,14 @@ namespace NGANHANG.MenuForm
         {
             try
             {
+                this.btnThem.Enabled = true;
+                this.btnSua.Enabled = true;
+                this.btnXoa.Enabled = true;
+                this.btnGhi.Enabled = true;
+                this.btnHoanTac.Enabled = false;
+                this.btnLamMoi.Enabled = true;
+                this.btnTHOAT.Enabled = true;
+                this.btnChuyenChiNhanh.Enabled = true;
 
                 this.nhanVienTableAdapter.Fill(this.dataSet.NhanVien);
                 this.gcNhanVien.Enabled = true;
@@ -657,7 +666,7 @@ namespace NGANHANG.MenuForm
                   "@SODT ='" + txtSDT.Text.ToString().Trim() + "';" +
                   "SELECT 'RETURN_VALUE' = @RETURN";
                 Console.WriteLine(cauTruyVan1);
-                SqlCommand sqlCommand2 = new SqlCommand(cauTruyVan1, Program.conn);
+                SqlCommand sqlCommand1 = new SqlCommand(cauTruyVan1, Program.conn);
                 try
                 {
                     Program.myReader = Program.ExecSqlDataReader(cauTruyVan1);
@@ -674,10 +683,10 @@ namespace NGANHANG.MenuForm
                     return false;
                 }
                 Program.myReader.Read();
-                int result = int.Parse(Program.myReader.GetValue(0).ToString());
+                int result1 = int.Parse(Program.myReader.GetValue(0).ToString());
                 Program.myReader.Close();
-                Console.WriteLine(result);
-                if (result == 1)
+                Console.WriteLine(result1);
+                if (result1 == 1)
                 {
                     MessageBox.Show("Số điện thoại đã được sử dụng", "Thông báo", MessageBoxButtons.OK);
                     txtSDT.Focus();
@@ -689,7 +698,7 @@ namespace NGANHANG.MenuForm
                   "@CMND ='" + txtCMND.Text.ToString().Trim() + "';" +
                   "SELECT 'RETURN_VALUE' = @RETURN";
                 Console.WriteLine(cauTruyVan2);
-                SqlCommand sqlCommand3 = new SqlCommand(cauTruyVan2, Program.conn);
+                SqlCommand sqlCommand2 = new SqlCommand(cauTruyVan2, Program.conn);
                 try
                 {
                     Program.myReader = Program.ExecSqlDataReader(cauTruyVan2);
@@ -721,7 +730,7 @@ namespace NGANHANG.MenuForm
                   "@MANV ='" + txtMANV.Text.ToString().Trim() + "';" +
                   "SELECT 'RETURN_VALUE' = @RETURN";
                 Console.WriteLine(cauTruyVan3);
-                SqlCommand sqlCommand4 = new SqlCommand(cauTruyVan3, Program.conn);
+                SqlCommand sqlCommand3 = new SqlCommand(cauTruyVan3, Program.conn);
                 try
                 {
                     Program.myReader = Program.ExecSqlDataReader(cauTruyVan3);

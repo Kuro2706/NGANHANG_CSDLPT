@@ -140,6 +140,7 @@ namespace NGANHANG.MenuForm
             txtMACN.EditValue = MACN;
 
             //step 3
+
             this.btnThem.Enabled = false;
             this.btnSua.Enabled = false;
             this.btnXoa.Enabled = false;
@@ -357,6 +358,15 @@ namespace NGANHANG.MenuForm
         {
             try
             {
+                this.btnThem.Enabled = true;
+                this.btnSua.Enabled = true;
+                this.btnXoa.Enabled = true;
+                this.btnGhi.Enabled = true;
+                this.btnHoanTac.Enabled = false;
+                this.btnLamMoi.Enabled = true;
+                this.btnTHOAT.Enabled = true;
+                this.btnMoTaiKhoan.Enabled = true;
+
                 this.khachHangTableAdapter.Fill(this.dataSet.KhachHang);
                 this.gcKhachHang.Enabled = true;
                 this.panelNhapLieu.Enabled = false;
@@ -464,15 +474,15 @@ namespace NGANHANG.MenuForm
 
             if (DangThemMoi == true)
             {
-                String cauTruyVan2 = "DECLARE @RETURN INT ;" +
+                String cauTruyVan4 = "DECLARE @RETURN INT ;" +
                   "EXEC @RETURN  = SP_KIEMTRASDT " +
                   "@SODT ='" + txtSDT.Text.ToString().Trim() + "';" +
                   "SELECT 'RETURN_VALUE' = @RETURN";
-                Console.WriteLine(cauTruyVan2);
-                SqlCommand sqlCommand2 = new SqlCommand(cauTruyVan2, Program.conn);
+                Console.WriteLine(cauTruyVan4);
+                SqlCommand sqlCommand4 = new SqlCommand(cauTruyVan4, Program.conn);
                 try
                 {
-                    Program.myReader = Program.ExecSqlDataReader(cauTruyVan2);
+                    Program.myReader = Program.ExecSqlDataReader(cauTruyVan4);
                     if (Program.myReader == null)
                     {
                         return false;
@@ -486,24 +496,24 @@ namespace NGANHANG.MenuForm
                     return false;
                 }
                 Program.myReader.Read();
-                int result2 = int.Parse(Program.myReader.GetValue(0).ToString());
+                int result4 = int.Parse(Program.myReader.GetValue(0).ToString());
                 Program.myReader.Close();
-                Console.WriteLine(result2);
-                if (result2 == 1)
+                Console.WriteLine(result4);
+                if (result4 == 1)
                 {
                     MessageBox.Show("Số điện thoại đã được sử dụng", "Thông báo", MessageBoxButtons.OK);
                     txtSDT.Focus();
                     return false;
                 }
-                String cauTruyVan3 = "DECLARE @RETURN INT ;" +
+                String cauTruyVan5 = "DECLARE @RETURN INT ;" +
                   "EXEC @RETURN  = SP_KIEMTRACMNDKH " +
                   "@CMND ='" + txtCMND.Text.ToString().Trim() + "';" +
                   "SELECT 'RETURN_VALUE' = @RETURN";
-                Console.WriteLine(cauTruyVan3);
-                SqlCommand sqlCommand3 = new SqlCommand(cauTruyVan3, Program.conn);
+                Console.WriteLine(cauTruyVan5);
+                SqlCommand sqlCommand5 = new SqlCommand(cauTruyVan5, Program.conn);
                 try
                 {
-                    Program.myReader = Program.ExecSqlDataReader(cauTruyVan3);
+                    Program.myReader = Program.ExecSqlDataReader(cauTruyVan5);
                     if (Program.myReader == null)
                     {
                         return false;
@@ -517,10 +527,10 @@ namespace NGANHANG.MenuForm
                     return false;
                 }
                 Program.myReader.Read();
-                int result3 = int.Parse(Program.myReader.GetValue(0).ToString());
+                int result5 = int.Parse(Program.myReader.GetValue(0).ToString());
                 Program.myReader.Close();
-                Console.WriteLine(result3);
-                if (result3 == 1)
+                Console.WriteLine(result5);
+                if (result5 == 1)
                 {
                     MessageBox.Show("CMND đã được sử dụng", "Thông báo", MessageBoxButtons.OK);
                     txtCMND.Focus();

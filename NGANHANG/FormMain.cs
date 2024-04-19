@@ -25,19 +25,7 @@ namespace NGANHANG
                     return f;
             return null;
         }
-        public static Boolean CheckExitedForm(String type)
-        {
-            FormCollection fc = Application.OpenForms;
-            foreach (Form frm in fc)
-            {
-                //iterate through
-                if (frm.Name == type)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
+        
         public void enableButtons()
         {
             if(Program.mGroup == "NGANHANG")
@@ -113,6 +101,7 @@ namespace NGANHANG
             btnTaoTaiKhoan.Enabled = false;
             btnTaoTaiKhoan.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             pageQuanLy.Visible = false;
+            pageNghiepVu.Visible = false;
             pageBaoCao.Visible = false;
 
             Form f = this.CheckExists(typeof(frmDangNhap));

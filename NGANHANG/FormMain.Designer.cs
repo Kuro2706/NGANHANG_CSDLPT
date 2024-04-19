@@ -264,6 +264,7 @@ namespace NGANHANG
             this.ribbonPageGroup4});
             this.pageNghiepVu.Name = "pageNghiepVu";
             this.pageNghiepVu.Text = "NGHIỆP VỤ";
+            this.pageNghiepVu.Visible = false;
             // 
             // ribbonPageGroup4
             // 

@@ -40,6 +40,8 @@ namespace NGANHANG
         public static string hoten = "";
         public static string diachi = "";
 
+        public static decimal sodu = 0;
+
         public static frmMain frmMain;
         public static frmDangNhap frmDangNhap;
 
@@ -51,7 +53,6 @@ namespace NGANHANG
         public static FormGoiRut formGoiRut;
 
         public static FormChonNV formChonNV;
-        public static FormChonTK formChonTK;
         public static FormChuyenChiNhanh formChuyenChiNhanh;
         public static FormMoTaiKhoan formMoTaiKhoan;
 
