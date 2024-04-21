@@ -127,7 +127,6 @@ namespace NGANHANG.MenuForm
             txtMANV.ReadOnly = true;
             txtSODU.ReadOnly = true;
             
-
             btnTaoGD.Enabled = btnLamMoi.Enabled = false;
             btnXacNhanGDChuyenTien.Enabled = btnHoanTac.Enabled = btnTHOAT.Enabled = true;
             gcGD_ChuyenTien.Enabled = false;
@@ -135,21 +134,20 @@ namespace NGANHANG.MenuForm
 
         private void btnXacNhanGDChuyenTien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            bool ketQua = kiemTraDuLieuDauVao();
+            /* Type type = sOTIENSpinEdit.Value.GetType();
+             Console.WriteLine("Kiểu dữ liệu của biến là: " + type.Name);*/
 
-           
-           /* Type type = sOTIENSpinEdit.Value.GetType();
-            Console.WriteLine("Kiểu dữ liệu của biến là: " + type.Name);*/
-           
+            bool ketQua = kiemTraDuLieuDauVao();
             if (ketQua == false)
                 return;
+
             string strLenh = "EXEC SP_GIAODICHCHUYENTIEN '" + cmbSTKChuyen.SelectedValue + "','" + cmbSTKNhan.SelectedValue + "','" + sOTIENSpinEdit.Value + "','" + txtMANV.Text + "'";
            
             Console.WriteLine(strLenh);
             int result = Program.ExecSqlNonQuery(strLenh);
             if (result != 0)
             {
-                MessageBox.Show("Lỗi giao dịch");
+                MessageBox.Show("Lỗi giao dịch", "Thông báo", MessageBoxButtons.OK);
                 return;
             }
 
@@ -157,7 +155,7 @@ namespace NGANHANG.MenuForm
 
             try
             {
-                MessageBox.Show("Giao dịch thành công");
+                MessageBox.Show("Giao dịch thành công", "Thông báo", MessageBoxButtons.OK);
                 bdsGDChuyenTien.ResetCurrentItem();
                 this.gD_CHUYENTIENTableAdapter.Connection.ConnectionString = Program.connstr;
                 this.gD_CHUYENTIENTableAdapter.Update(this.dataSet.GD_CHUYENTIEN);
@@ -165,7 +163,7 @@ namespace NGANHANG.MenuForm
             }
             catch (Exception ex)
             {
-                MessageBox.Show("lỗi ghi thông tin giao dịch.\n" + ex.Message, "lỗi!", MessageBoxButtons.OK);
+                MessageBox.Show("Lỗi ghi thông tin giao dịch.\n" + ex.Message, "Lỗi!", MessageBoxButtons.OK);
                 return;
             }
 
@@ -179,6 +177,7 @@ namespace NGANHANG.MenuForm
         {
             panelNhapLieu.Enabled = false;
             txtMANV.Text = "";
+            txtSODU.Text = "";
             cmbSTKChuyen.SelectedValue = cmbSTKNhan.SelectedValue = "";
             sOTIENSpinEdit.Value = 0;
 
@@ -214,6 +213,17 @@ namespace NGANHANG.MenuForm
             decimal sodu = decimal.Parse(txtSODU.Text.ToString().Trim());
       
             Console.WriteLine(txtSODU.Text.ToString().Trim());
+            if (cmbSTKChuyen.Text.Trim() == "")
+            {
+                MessageBox.Show("Tài khoản chuyển không được để trống", "Thông báo", MessageBoxButtons.OK);
+                return false;
+            }
+            if (cmbSTKNhan.Text.Trim() == "")
+            {
+                MessageBox.Show("Tài khoản nhận không được để trống", "Thông báo", MessageBoxButtons.OK);
+                return false;
+            }
+
             if (cmbSTKChuyen.SelectedValue == cmbSTKNhan.SelectedValue)
             {
                 MessageBox.Show("Tài khoản chuyển không được trùng với tài khoản nhận", "Thông báo", MessageBoxButtons.OK);

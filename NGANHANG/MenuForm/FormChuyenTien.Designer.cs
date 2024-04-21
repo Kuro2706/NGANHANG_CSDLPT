@@ -34,8 +34,8 @@ namespace NGANHANG.MenuForm
             System.Windows.Forms.Label lbSoTien;
             System.Windows.Forms.Label lbSTKChuyen;
             System.Windows.Forms.Label lbSTKNhan;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormChuyenTien));
             System.Windows.Forms.Label lbSODU;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormChuyenTien));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.cmbChiNhanh = new System.Windows.Forms.ComboBox();
             this.lbChiNhanh = new System.Windows.Forms.Label();
@@ -52,6 +52,7 @@ namespace NGANHANG.MenuForm
             this.colSOTK_NHAN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMANV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelNhapLieu = new System.Windows.Forms.Panel();
+            this.txtSODU = new DevExpress.XtraEditors.TextEdit();
             this.bdsTaiKhoan = new System.Windows.Forms.BindingSource(this.components);
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
@@ -66,12 +67,11 @@ namespace NGANHANG.MenuForm
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.cmbSTKNhan = new System.Windows.Forms.ComboBox();
+            this.cmbSTKChuyen = new System.Windows.Forms.ComboBox();
             this.sOTIENSpinEdit = new DevExpress.XtraEditors.SpinEdit();
             this.txtMANV = new DevExpress.XtraEditors.TextEdit();
             this.taiKhoanTableAdapter = new NGANHANG.NGANHANGDataSetTableAdapters.TaiKhoanTableAdapter();
-            this.cmbSTKChuyen = new System.Windows.Forms.ComboBox();
-            this.cmbSTKNhan = new System.Windows.Forms.ComboBox();
-            this.txtSODU = new DevExpress.XtraEditors.TextEdit();
             lbMANV = new System.Windows.Forms.Label();
             lbSoTien = new System.Windows.Forms.Label();
             lbSTKChuyen = new System.Windows.Forms.Label();
@@ -84,11 +84,11 @@ namespace NGANHANG.MenuForm
             ((System.ComponentModel.ISupportInitialize)(this.gcGD_ChuyenTien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.panelNhapLieu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSODU.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsTaiKhoan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sOTIENSpinEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMANV.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSODU.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // lbMANV
@@ -131,6 +131,16 @@ namespace NGANHANG.MenuForm
             lbSTKNhan.TabIndex = 22;
             lbSTKNhan.Text = "Số tài khoản nhận:";
             // 
+            // lbSODU
+            // 
+            lbSODU.AutoSize = true;
+            lbSODU.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lbSODU.Location = new System.Drawing.Point(519, 66);
+            lbSODU.Name = "lbSODU";
+            lbSODU.Size = new System.Drawing.Size(53, 19);
+            lbSODU.TabIndex = 24;
+            lbSODU.Text = "Số dư:";
+            // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.cmbChiNhanh);
@@ -143,6 +153,7 @@ namespace NGANHANG.MenuForm
             // 
             // cmbChiNhanh
             // 
+            this.cmbChiNhanh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbChiNhanh.FormattingEnabled = true;
             this.cmbChiNhanh.Location = new System.Drawing.Point(243, 39);
             this.cmbChiNhanh.Name = "cmbChiNhanh";
@@ -213,8 +224,12 @@ namespace NGANHANG.MenuForm
             // 
             this.colMAGD.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colMAGD.AppearanceCell.Options.UseFont = true;
+            this.colMAGD.AppearanceCell.Options.UseTextOptions = true;
+            this.colMAGD.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.colMAGD.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colMAGD.AppearanceHeader.Options.UseFont = true;
+            this.colMAGD.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMAGD.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colMAGD.Caption = "Mã giao dịch";
             this.colMAGD.FieldName = "MAGD";
             this.colMAGD.MinWidth = 25;
@@ -228,8 +243,12 @@ namespace NGANHANG.MenuForm
             // 
             this.colSOTK_CHUYEN.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colSOTK_CHUYEN.AppearanceCell.Options.UseFont = true;
+            this.colSOTK_CHUYEN.AppearanceCell.Options.UseTextOptions = true;
+            this.colSOTK_CHUYEN.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.colSOTK_CHUYEN.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colSOTK_CHUYEN.AppearanceHeader.Options.UseFont = true;
+            this.colSOTK_CHUYEN.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSOTK_CHUYEN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colSOTK_CHUYEN.Caption = "Số tài khoản chuyển";
             this.colSOTK_CHUYEN.FieldName = "SOTK_CHUYEN";
             this.colSOTK_CHUYEN.MinWidth = 25;
@@ -243,8 +262,12 @@ namespace NGANHANG.MenuForm
             // 
             this.colNGAYGD.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colNGAYGD.AppearanceCell.Options.UseFont = true;
+            this.colNGAYGD.AppearanceCell.Options.UseTextOptions = true;
+            this.colNGAYGD.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.colNGAYGD.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colNGAYGD.AppearanceHeader.Options.UseFont = true;
+            this.colNGAYGD.AppearanceHeader.Options.UseTextOptions = true;
+            this.colNGAYGD.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colNGAYGD.Caption = "Ngày giao dịch";
             this.colNGAYGD.FieldName = "NGAYGD";
             this.colNGAYGD.MinWidth = 25;
@@ -258,9 +281,15 @@ namespace NGANHANG.MenuForm
             // 
             this.colSOTIEN.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colSOTIEN.AppearanceCell.Options.UseFont = true;
+            this.colSOTIEN.AppearanceCell.Options.UseTextOptions = true;
+            this.colSOTIEN.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.colSOTIEN.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colSOTIEN.AppearanceHeader.Options.UseFont = true;
+            this.colSOTIEN.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSOTIEN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colSOTIEN.Caption = "Số tiền";
+            this.colSOTIEN.DisplayFormat.FormatString = "n0";
+            this.colSOTIEN.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSOTIEN.FieldName = "SOTIEN";
             this.colSOTIEN.MinWidth = 25;
             this.colSOTIEN.Name = "colSOTIEN";
@@ -273,8 +302,12 @@ namespace NGANHANG.MenuForm
             // 
             this.colSOTK_NHAN.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colSOTK_NHAN.AppearanceCell.Options.UseFont = true;
+            this.colSOTK_NHAN.AppearanceCell.Options.UseTextOptions = true;
+            this.colSOTK_NHAN.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.colSOTK_NHAN.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colSOTK_NHAN.AppearanceHeader.Options.UseFont = true;
+            this.colSOTK_NHAN.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSOTK_NHAN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colSOTK_NHAN.Caption = "Số tài khoản nhận";
             this.colSOTK_NHAN.FieldName = "SOTK_NHAN";
             this.colSOTK_NHAN.MinWidth = 25;
@@ -288,8 +321,12 @@ namespace NGANHANG.MenuForm
             // 
             this.colMANV.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colMANV.AppearanceCell.Options.UseFont = true;
+            this.colMANV.AppearanceCell.Options.UseTextOptions = true;
+            this.colMANV.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.colMANV.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colMANV.AppearanceHeader.Options.UseFont = true;
+            this.colMANV.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMANV.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colMANV.Caption = "Mã nhân viên";
             this.colMANV.FieldName = "MANV";
             this.colMANV.MinWidth = 25;
@@ -316,6 +353,21 @@ namespace NGANHANG.MenuForm
             this.panelNhapLieu.Name = "panelNhapLieu";
             this.panelNhapLieu.Size = new System.Drawing.Size(1498, 185);
             this.panelNhapLieu.TabIndex = 7;
+            // 
+            // txtSODU
+            // 
+            this.txtSODU.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsTaiKhoan, "SODU", true));
+            this.txtSODU.Location = new System.Drawing.Point(587, 64);
+            this.txtSODU.MenuManager = this.barManager1;
+            this.txtSODU.Name = "txtSODU";
+            this.txtSODU.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSODU.Properties.Appearance.Options.UseFont = true;
+            this.txtSODU.Properties.DisplayFormat.FormatString = "n0";
+            this.txtSODU.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtSODU.Properties.EditFormat.FormatString = "n0";
+            this.txtSODU.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtSODU.Size = new System.Drawing.Size(124, 26);
+            this.txtSODU.TabIndex = 25;
             // 
             // bdsTaiKhoan
             // 
@@ -456,6 +508,24 @@ namespace NGANHANG.MenuForm
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 505);
             // 
+            // cmbSTKNhan
+            // 
+            this.cmbSTKNhan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSTKNhan.FormattingEnabled = true;
+            this.cmbSTKNhan.Location = new System.Drawing.Point(339, 135);
+            this.cmbSTKNhan.Name = "cmbSTKNhan";
+            this.cmbSTKNhan.Size = new System.Drawing.Size(137, 24);
+            this.cmbSTKNhan.TabIndex = 24;
+            // 
+            // cmbSTKChuyen
+            // 
+            this.cmbSTKChuyen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSTKChuyen.FormattingEnabled = true;
+            this.cmbSTKChuyen.Location = new System.Drawing.Point(339, 66);
+            this.cmbSTKChuyen.Name = "cmbSTKChuyen";
+            this.cmbSTKChuyen.Size = new System.Drawing.Size(137, 24);
+            this.cmbSTKChuyen.TabIndex = 23;
+            // 
             // sOTIENSpinEdit
             // 
             this.sOTIENSpinEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGDChuyenTien, "SOTIEN", true));
@@ -491,47 +561,6 @@ namespace NGANHANG.MenuForm
             // 
             this.taiKhoanTableAdapter.ClearBeforeFill = true;
             // 
-            // cmbSTKChuyen
-            // 
-            this.cmbSTKChuyen.FormattingEnabled = true;
-            this.cmbSTKChuyen.Location = new System.Drawing.Point(339, 66);
-            this.cmbSTKChuyen.Name = "cmbSTKChuyen";
-            this.cmbSTKChuyen.Size = new System.Drawing.Size(137, 24);
-            this.cmbSTKChuyen.TabIndex = 23;
-            // 
-            // cmbSTKNhan
-            // 
-            this.cmbSTKNhan.FormattingEnabled = true;
-            this.cmbSTKNhan.Location = new System.Drawing.Point(339, 135);
-            this.cmbSTKNhan.Name = "cmbSTKNhan";
-            this.cmbSTKNhan.Size = new System.Drawing.Size(137, 24);
-            this.cmbSTKNhan.TabIndex = 24;
-            // 
-            // lbSODU
-            // 
-            lbSODU.AutoSize = true;
-            lbSODU.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lbSODU.Location = new System.Drawing.Point(519, 66);
-            lbSODU.Name = "lbSODU";
-            lbSODU.Size = new System.Drawing.Size(53, 19);
-            lbSODU.TabIndex = 24;
-            lbSODU.Text = "Số dư:";
-            // 
-            // txtSODU
-            // 
-            this.txtSODU.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsTaiKhoan, "SODU", true));
-            this.txtSODU.Location = new System.Drawing.Point(587, 64);
-            this.txtSODU.MenuManager = this.barManager1;
-            this.txtSODU.Name = "txtSODU";
-            this.txtSODU.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSODU.Properties.Appearance.Options.UseFont = true;
-            this.txtSODU.Properties.DisplayFormat.FormatString = "n0";
-            this.txtSODU.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtSODU.Properties.EditFormat.FormatString = "n0";
-            this.txtSODU.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtSODU.Size = new System.Drawing.Size(124, 26);
-            this.txtSODU.TabIndex = 25;
-            // 
             // FormChuyenTien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -556,11 +585,11 @@ namespace NGANHANG.MenuForm
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.panelNhapLieu.ResumeLayout(false);
             this.panelNhapLieu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSODU.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsTaiKhoan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sOTIENSpinEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMANV.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSODU.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -110,6 +110,10 @@ namespace NGANHANG.SubForm
             this.txtSoDu.Name = "txtSoDu";
             this.txtSoDu.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.10084F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoDu.Properties.Appearance.Options.UseFont = true;
+            this.txtSoDu.Properties.DisplayFormat.FormatString = "n0";
+            this.txtSoDu.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtSoDu.Properties.EditFormat.FormatString = "n0";
+            this.txtSoDu.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtSoDu.Size = new System.Drawing.Size(234, 30);
             this.txtSoDu.TabIndex = 6;
             // 
@@ -151,6 +155,7 @@ namespace NGANHANG.SubForm
             // 
             // cmbChiNhanh
             // 
+            this.cmbChiNhanh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbChiNhanh.Font = new System.Drawing.Font("Times New Roman", 12.10084F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbChiNhanh.FormattingEnabled = true;
             this.cmbChiNhanh.Location = new System.Drawing.Point(399, 122);

@@ -36,7 +36,7 @@ namespace NGANHANG
                 btnThoat.Enabled = true;
 
                 pageQuanLy.Visible = true;
-                pageNghiepVu.Visible = false;
+                pageNghiepVu.Visible = true;
                 pageBaoCao.Visible = true;
             }
             if(Program.mGroup == "CHINHANH")

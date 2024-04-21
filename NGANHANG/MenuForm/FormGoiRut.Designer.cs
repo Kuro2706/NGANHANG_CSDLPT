@@ -34,6 +34,7 @@ namespace NGANHANG.MenuForm
             System.Windows.Forms.Label lbLoaiGD;
             System.Windows.Forms.Label lbSoTien;
             System.Windows.Forms.Label lbMANV;
+            System.Windows.Forms.Label lbSODU;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGoiRut));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.cmbChiNhanh = new System.Windows.Forms.ComboBox();
@@ -42,7 +43,7 @@ namespace NGANHANG.MenuForm
             this.bdsGDGoiRut = new System.Windows.Forms.BindingSource(this.components);
             this.gD_GOIRUTTableAdapter = new NGANHANG.NGANHANGDataSetTableAdapters.GD_GOIRUTTableAdapter();
             this.tableAdapterManager = new NGANHANG.NGANHANGDataSetTableAdapters.TableAdapterManager();
-            this.gcGDGoiRut = new DevExpress.XtraGrid.GridControl();
+            this.gcGD_GoiRut = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAGD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSOTK = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -51,11 +52,8 @@ namespace NGANHANG.MenuForm
             this.colSOTIEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMANV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelNhapLieu = new System.Windows.Forms.Panel();
-            this.btnSTK = new DevExpress.XtraEditors.SimpleButton();
-            this.txtMANV = new DevExpress.XtraEditors.TextEdit();
-            this.sOTIENSpinEdit = new DevExpress.XtraEditors.SpinEdit();
-            this.cmbLoaiGD = new System.Windows.Forms.ComboBox();
-            this.txtSTK = new DevExpress.XtraEditors.TextEdit();
+            this.txtSODU = new DevExpress.XtraEditors.TextEdit();
+            this.bdsTaiKhoan = new System.Windows.Forms.BindingSource(this.components);
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnTaoGD = new DevExpress.XtraBars.BarButtonItem();
@@ -69,28 +67,35 @@ namespace NGANHANG.MenuForm
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.cmbSTK = new System.Windows.Forms.ComboBox();
+            this.txtMANV = new DevExpress.XtraEditors.TextEdit();
+            this.sOTIENSpinEdit = new DevExpress.XtraEditors.SpinEdit();
+            this.cmbLoaiGD = new System.Windows.Forms.ComboBox();
+            this.taiKhoanTableAdapter = new NGANHANG.NGANHANGDataSetTableAdapters.TaiKhoanTableAdapter();
             lbSTK = new System.Windows.Forms.Label();
             lbLoaiGD = new System.Windows.Forms.Label();
             lbSoTien = new System.Windows.Forms.Label();
             lbMANV = new System.Windows.Forms.Label();
+            lbSODU = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsGDGoiRut)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcGDGoiRut)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcGD_GoiRut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.panelNhapLieu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSODU.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsTaiKhoan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMANV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sOTIENSpinEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSTK.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbSTK
             // 
             lbSTK.AutoSize = true;
             lbSTK.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lbSTK.Location = new System.Drawing.Point(226, 51);
+            lbSTK.Location = new System.Drawing.Point(226, 55);
             lbSTK.Name = "lbSTK";
             lbSTK.Size = new System.Drawing.Size(97, 19);
             lbSTK.TabIndex = 0;
@@ -112,7 +117,7 @@ namespace NGANHANG.MenuForm
             // 
             lbSoTien.AutoSize = true;
             lbSoTien.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lbSoTien.Location = new System.Drawing.Point(705, 51);
+            lbSoTien.Location = new System.Drawing.Point(804, 55);
             lbSoTien.Name = "lbSoTien";
             lbSoTien.Size = new System.Drawing.Size(62, 19);
             lbSoTien.TabIndex = 4;
@@ -122,12 +127,22 @@ namespace NGANHANG.MenuForm
             // 
             lbMANV.AutoSize = true;
             lbMANV.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lbMANV.Location = new System.Drawing.Point(705, 129);
+            lbMANV.Location = new System.Drawing.Point(804, 129);
             lbMANV.Name = "lbMANV";
             lbMANV.Size = new System.Drawing.Size(103, 19);
             lbMANV.TabIndex = 6;
             lbMANV.Text = "Mã nhân viên:";
             lbMANV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbSODU
+            // 
+            lbSODU.AutoSize = true;
+            lbSODU.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lbSODU.Location = new System.Drawing.Point(527, 55);
+            lbSODU.Name = "lbSODU";
+            lbSODU.Size = new System.Drawing.Size(53, 19);
+            lbSODU.TabIndex = 8;
+            lbSODU.Text = "Số dư:";
             // 
             // panelControl1
             // 
@@ -141,11 +156,13 @@ namespace NGANHANG.MenuForm
             // 
             // cmbChiNhanh
             // 
+            this.cmbChiNhanh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbChiNhanh.FormattingEnabled = true;
             this.cmbChiNhanh.Location = new System.Drawing.Point(243, 39);
             this.cmbChiNhanh.Name = "cmbChiNhanh";
             this.cmbChiNhanh.Size = new System.Drawing.Size(257, 24);
             this.cmbChiNhanh.TabIndex = 1;
+            this.cmbChiNhanh.SelectedIndexChanged += new System.EventHandler(this.cmbChiNhanh_SelectedIndexChanged);
             // 
             // lbChiNhanh
             // 
@@ -181,16 +198,16 @@ namespace NGANHANG.MenuForm
             this.tableAdapterManager.TaiKhoanTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = NGANHANG.NGANHANGDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // gcGDGoiRut
+            // gcGD_GoiRut
             // 
-            this.gcGDGoiRut.DataSource = this.bdsGDGoiRut;
-            this.gcGDGoiRut.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gcGDGoiRut.Location = new System.Drawing.Point(0, 129);
-            this.gcGDGoiRut.MainView = this.gridView1;
-            this.gcGDGoiRut.Name = "gcGDGoiRut";
-            this.gcGDGoiRut.Size = new System.Drawing.Size(1498, 220);
-            this.gcGDGoiRut.TabIndex = 7;
-            this.gcGDGoiRut.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gcGD_GoiRut.DataSource = this.bdsGDGoiRut;
+            this.gcGD_GoiRut.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gcGD_GoiRut.Location = new System.Drawing.Point(0, 129);
+            this.gcGD_GoiRut.MainView = this.gridView1;
+            this.gcGD_GoiRut.Name = "gcGD_GoiRut";
+            this.gcGD_GoiRut.Size = new System.Drawing.Size(1498, 262);
+            this.gcGD_GoiRut.TabIndex = 7;
+            this.gcGD_GoiRut.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
@@ -202,15 +219,19 @@ namespace NGANHANG.MenuForm
             this.colNGAYGD,
             this.colSOTIEN,
             this.colMANV});
-            this.gridView1.GridControl = this.gcGDGoiRut;
+            this.gridView1.GridControl = this.gcGD_GoiRut;
             this.gridView1.Name = "gridView1";
             // 
             // colMAGD
             // 
             this.colMAGD.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colMAGD.AppearanceCell.Options.UseFont = true;
+            this.colMAGD.AppearanceCell.Options.UseTextOptions = true;
+            this.colMAGD.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.colMAGD.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colMAGD.AppearanceHeader.Options.UseFont = true;
+            this.colMAGD.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMAGD.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colMAGD.Caption = "Mã giao dịch";
             this.colMAGD.FieldName = "MAGD";
             this.colMAGD.MinWidth = 25;
@@ -224,8 +245,12 @@ namespace NGANHANG.MenuForm
             // 
             this.colSOTK.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colSOTK.AppearanceCell.Options.UseFont = true;
+            this.colSOTK.AppearanceCell.Options.UseTextOptions = true;
+            this.colSOTK.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.colSOTK.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colSOTK.AppearanceHeader.Options.UseFont = true;
+            this.colSOTK.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSOTK.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colSOTK.Caption = "Số tài khoản";
             this.colSOTK.FieldName = "SOTK";
             this.colSOTK.MinWidth = 25;
@@ -239,8 +264,12 @@ namespace NGANHANG.MenuForm
             // 
             this.colLOAIGD.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colLOAIGD.AppearanceCell.Options.UseFont = true;
+            this.colLOAIGD.AppearanceCell.Options.UseTextOptions = true;
+            this.colLOAIGD.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colLOAIGD.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colLOAIGD.AppearanceHeader.Options.UseFont = true;
+            this.colLOAIGD.AppearanceHeader.Options.UseTextOptions = true;
+            this.colLOAIGD.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colLOAIGD.Caption = "Loại giao dịch";
             this.colLOAIGD.FieldName = "LOAIGD";
             this.colLOAIGD.MinWidth = 25;
@@ -254,8 +283,12 @@ namespace NGANHANG.MenuForm
             // 
             this.colNGAYGD.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colNGAYGD.AppearanceCell.Options.UseFont = true;
+            this.colNGAYGD.AppearanceCell.Options.UseTextOptions = true;
+            this.colNGAYGD.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.colNGAYGD.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colNGAYGD.AppearanceHeader.Options.UseFont = true;
+            this.colNGAYGD.AppearanceHeader.Options.UseTextOptions = true;
+            this.colNGAYGD.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colNGAYGD.Caption = "Ngày giao dịch";
             this.colNGAYGD.FieldName = "NGAYGD";
             this.colNGAYGD.MinWidth = 25;
@@ -269,9 +302,15 @@ namespace NGANHANG.MenuForm
             // 
             this.colSOTIEN.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colSOTIEN.AppearanceCell.Options.UseFont = true;
+            this.colSOTIEN.AppearanceCell.Options.UseTextOptions = true;
+            this.colSOTIEN.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.colSOTIEN.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colSOTIEN.AppearanceHeader.Options.UseFont = true;
+            this.colSOTIEN.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSOTIEN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colSOTIEN.Caption = "Số tiền";
+            this.colSOTIEN.DisplayFormat.FormatString = "n0";
+            this.colSOTIEN.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSOTIEN.FieldName = "SOTIEN";
             this.colSOTIEN.MinWidth = 25;
             this.colSOTIEN.Name = "colSOTIEN";
@@ -284,8 +323,12 @@ namespace NGANHANG.MenuForm
             // 
             this.colMANV.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colMANV.AppearanceCell.Options.UseFont = true;
+            this.colMANV.AppearanceCell.Options.UseTextOptions = true;
+            this.colMANV.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.colMANV.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colMANV.AppearanceHeader.Options.UseFont = true;
+            this.colMANV.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMANV.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colMANV.Caption = "Mã nhân viên";
             this.colMANV.FieldName = "MANV";
             this.colMANV.MinWidth = 25;
@@ -297,7 +340,9 @@ namespace NGANHANG.MenuForm
             // 
             // panelNhapLieu
             // 
-            this.panelNhapLieu.Controls.Add(this.btnSTK);
+            this.panelNhapLieu.Controls.Add(lbSODU);
+            this.panelNhapLieu.Controls.Add(this.txtSODU);
+            this.panelNhapLieu.Controls.Add(this.cmbSTK);
             this.panelNhapLieu.Controls.Add(lbMANV);
             this.panelNhapLieu.Controls.Add(this.txtMANV);
             this.panelNhapLieu.Controls.Add(lbSoTien);
@@ -305,67 +350,31 @@ namespace NGANHANG.MenuForm
             this.panelNhapLieu.Controls.Add(lbLoaiGD);
             this.panelNhapLieu.Controls.Add(this.cmbLoaiGD);
             this.panelNhapLieu.Controls.Add(lbSTK);
-            this.panelNhapLieu.Controls.Add(this.txtSTK);
             this.panelNhapLieu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelNhapLieu.Location = new System.Drawing.Point(0, 349);
+            this.panelNhapLieu.Location = new System.Drawing.Point(0, 391);
             this.panelNhapLieu.Name = "panelNhapLieu";
-            this.panelNhapLieu.Size = new System.Drawing.Size(1498, 185);
+            this.panelNhapLieu.Size = new System.Drawing.Size(1498, 256);
             this.panelNhapLieu.TabIndex = 8;
             // 
-            // btnSTK
+            // txtSODU
             // 
-            this.btnSTK.Location = new System.Drawing.Point(515, 48);
-            this.btnSTK.Name = "btnSTK";
-            this.btnSTK.Size = new System.Drawing.Size(26, 26);
-            this.btnSTK.TabIndex = 22;
-            this.btnSTK.Text = "...";
+            this.txtSODU.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsTaiKhoan, "SODU", true));
+            this.txtSODU.Location = new System.Drawing.Point(604, 52);
+            this.txtSODU.MenuManager = this.barManager1;
+            this.txtSODU.Name = "txtSODU";
+            this.txtSODU.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSODU.Properties.Appearance.Options.UseFont = true;
+            this.txtSODU.Properties.DisplayFormat.FormatString = "n0";
+            this.txtSODU.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtSODU.Properties.EditFormat.FormatString = "n0";
+            this.txtSODU.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtSODU.Size = new System.Drawing.Size(124, 26);
+            this.txtSODU.TabIndex = 9;
             // 
-            // txtMANV
+            // bdsTaiKhoan
             // 
-            this.txtMANV.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGDGoiRut, "MANV", true));
-            this.txtMANV.Location = new System.Drawing.Point(820, 122);
-            this.txtMANV.Name = "txtMANV";
-            this.txtMANV.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMANV.Properties.Appearance.Options.UseFont = true;
-            this.txtMANV.Size = new System.Drawing.Size(158, 26);
-            this.txtMANV.TabIndex = 7;
-            // 
-            // sOTIENSpinEdit
-            // 
-            this.sOTIENSpinEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGDGoiRut, "SOTIEN", true));
-            this.sOTIENSpinEdit.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.sOTIENSpinEdit.Location = new System.Drawing.Point(820, 48);
-            this.sOTIENSpinEdit.Name = "sOTIENSpinEdit";
-            this.sOTIENSpinEdit.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sOTIENSpinEdit.Properties.Appearance.Options.UseFont = true;
-            this.sOTIENSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.sOTIENSpinEdit.Size = new System.Drawing.Size(158, 26);
-            this.sOTIENSpinEdit.TabIndex = 5;
-            // 
-            // cmbLoaiGD
-            // 
-            this.cmbLoaiGD.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsGDGoiRut, "LOAIGD", true));
-            this.cmbLoaiGD.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbLoaiGD.FormattingEnabled = true;
-            this.cmbLoaiGD.Location = new System.Drawing.Point(349, 126);
-            this.cmbLoaiGD.Name = "cmbLoaiGD";
-            this.cmbLoaiGD.Size = new System.Drawing.Size(151, 27);
-            this.cmbLoaiGD.TabIndex = 3;
-            // 
-            // txtSTK
-            // 
-            this.txtSTK.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGDGoiRut, "SOTK", true));
-            this.txtSTK.Location = new System.Drawing.Point(349, 48);
-            this.txtSTK.Name = "txtSTK";
-            this.txtSTK.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSTK.Properties.Appearance.Options.UseFont = true;
-            this.txtSTK.Size = new System.Drawing.Size(151, 26);
-            this.txtSTK.TabIndex = 1;
+            this.bdsTaiKhoan.DataMember = "TaiKhoan";
+            this.bdsTaiKhoan.DataSource = this.dataSet;
             // 
             // barManager1
             // 
@@ -412,6 +421,7 @@ namespace NGANHANG.MenuForm
             this.btnTaoGD.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnTaoGD.ImageOptions.SvgImage")));
             this.btnTaoGD.Name = "btnTaoGD";
             this.btnTaoGD.Size = new System.Drawing.Size(140, 0);
+            this.btnTaoGD.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTaoGD_ItemClick);
             // 
             // btnXacNhanGDChuyenTien
             // 
@@ -420,6 +430,7 @@ namespace NGANHANG.MenuForm
             this.btnXacNhanGDChuyenTien.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnXacNhanGDChuyenTien.ImageOptions.SvgImage")));
             this.btnXacNhanGDChuyenTien.Name = "btnXacNhanGDChuyenTien";
             this.btnXacNhanGDChuyenTien.Size = new System.Drawing.Size(140, 0);
+            this.btnXacNhanGDChuyenTien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXacNhanGDChuyenTien_ItemClick);
             // 
             // btnHoanTac
             // 
@@ -427,6 +438,7 @@ namespace NGANHANG.MenuForm
             this.btnHoanTac.Id = 3;
             this.btnHoanTac.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnHoanTac.ImageOptions.SvgImage")));
             this.btnHoanTac.Name = "btnHoanTac";
+            this.btnHoanTac.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHoanTac_ItemClick);
             // 
             // btnLamMoi
             // 
@@ -434,6 +446,7 @@ namespace NGANHANG.MenuForm
             this.btnLamMoi.Id = 4;
             this.btnLamMoi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnLamMoi.ImageOptions.SvgImage")));
             this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLamMoi_ItemClick);
             // 
             // btnMoTaiKhoan
             // 
@@ -446,6 +459,7 @@ namespace NGANHANG.MenuForm
             this.btnTHOAT.Id = 6;
             this.btnTHOAT.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnTHOAT.ImageOptions.SvgImage")));
             this.btnTHOAT.Name = "btnTHOAT";
+            this.btnTHOAT.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTHOAT_ItemClick);
             // 
             // bar3
             // 
@@ -473,7 +487,7 @@ namespace NGANHANG.MenuForm
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 534);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 647);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.barDockControlBottom.Size = new System.Drawing.Size(1498, 27);
@@ -485,7 +499,7 @@ namespace NGANHANG.MenuForm
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 29);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 505);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 618);
             // 
             // barDockControlRight
             // 
@@ -494,15 +508,73 @@ namespace NGANHANG.MenuForm
             this.barDockControlRight.Location = new System.Drawing.Point(1498, 29);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 505);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 618);
+            // 
+            // cmbSTK
+            // 
+            this.cmbSTK.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsGDGoiRut, "SOTK", true));
+            this.cmbSTK.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSTK.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSTK.FormattingEnabled = true;
+            this.cmbSTK.Location = new System.Drawing.Point(349, 50);
+            this.cmbSTK.Name = "cmbSTK";
+            this.cmbSTK.Size = new System.Drawing.Size(151, 27);
+            this.cmbSTK.TabIndex = 8;
+            // 
+            // txtMANV
+            // 
+            this.txtMANV.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGDGoiRut, "MANV", true));
+            this.txtMANV.Location = new System.Drawing.Point(971, 123);
+            this.txtMANV.Name = "txtMANV";
+            this.txtMANV.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMANV.Properties.Appearance.Options.UseFont = true;
+            this.txtMANV.Size = new System.Drawing.Size(158, 26);
+            this.txtMANV.TabIndex = 7;
+            // 
+            // sOTIENSpinEdit
+            // 
+            this.sOTIENSpinEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsGDGoiRut, "SOTIEN", true));
+            this.sOTIENSpinEdit.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.sOTIENSpinEdit.Location = new System.Drawing.Point(971, 52);
+            this.sOTIENSpinEdit.Name = "sOTIENSpinEdit";
+            this.sOTIENSpinEdit.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sOTIENSpinEdit.Properties.Appearance.Options.UseFont = true;
+            this.sOTIENSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.sOTIENSpinEdit.Properties.DisplayFormat.FormatString = "n0";
+            this.sOTIENSpinEdit.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.sOTIENSpinEdit.Properties.EditFormat.FormatString = "n0";
+            this.sOTIENSpinEdit.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.sOTIENSpinEdit.Size = new System.Drawing.Size(158, 26);
+            this.sOTIENSpinEdit.TabIndex = 5;
+            // 
+            // cmbLoaiGD
+            // 
+            this.cmbLoaiGD.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsGDGoiRut, "LOAIGD", true));
+            this.cmbLoaiGD.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbLoaiGD.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbLoaiGD.FormattingEnabled = true;
+            this.cmbLoaiGD.Location = new System.Drawing.Point(349, 126);
+            this.cmbLoaiGD.Name = "cmbLoaiGD";
+            this.cmbLoaiGD.Size = new System.Drawing.Size(151, 27);
+            this.cmbLoaiGD.TabIndex = 3;
+            this.cmbLoaiGD.SelectedIndexChanged += new System.EventHandler(this.cmbLoaiGD_SelectedIndexChanged);
+            // 
+            // taiKhoanTableAdapter
+            // 
+            this.taiKhoanTableAdapter.ClearBeforeFill = true;
             // 
             // FormGoiRut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1498, 561);
+            this.ClientSize = new System.Drawing.Size(1498, 674);
             this.Controls.Add(this.panelNhapLieu);
-            this.Controls.Add(this.gcGDGoiRut);
+            this.Controls.Add(this.gcGD_GoiRut);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -516,14 +588,15 @@ namespace NGANHANG.MenuForm
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsGDGoiRut)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcGDGoiRut)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcGD_GoiRut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.panelNhapLieu.ResumeLayout(false);
             this.panelNhapLieu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSODU.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsTaiKhoan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMANV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sOTIENSpinEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSTK.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -538,7 +611,7 @@ namespace NGANHANG.MenuForm
         private System.Windows.Forms.BindingSource bdsGDGoiRut;
         private NGANHANGDataSetTableAdapters.GD_GOIRUTTableAdapter gD_GOIRUTTableAdapter;
         private NGANHANGDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private DevExpress.XtraGrid.GridControl gcGDGoiRut;
+        private DevExpress.XtraGrid.GridControl gcGD_GoiRut;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colMAGD;
         private DevExpress.XtraGrid.Columns.GridColumn colSOTK;
@@ -550,8 +623,6 @@ namespace NGANHANG.MenuForm
         private DevExpress.XtraEditors.TextEdit txtMANV;
         private DevExpress.XtraEditors.SpinEdit sOTIENSpinEdit;
         private System.Windows.Forms.ComboBox cmbLoaiGD;
-        private DevExpress.XtraEditors.TextEdit txtSTK;
-        private DevExpress.XtraEditors.SimpleButton btnSTK;
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar bar2;
         private DevExpress.XtraBars.BarButtonItem btnTaoGD;
@@ -565,5 +636,9 @@ namespace NGANHANG.MenuForm
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private System.Windows.Forms.BindingSource bdsTaiKhoan;
+        private NGANHANGDataSetTableAdapters.TaiKhoanTableAdapter taiKhoanTableAdapter;
+        private DevExpress.XtraEditors.TextEdit txtSODU;
+        private System.Windows.Forms.ComboBox cmbSTK;
     }
 }

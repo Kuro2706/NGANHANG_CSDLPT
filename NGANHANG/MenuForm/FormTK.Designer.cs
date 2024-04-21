@@ -230,6 +230,7 @@ namespace NGANHANG.MenuForm
             // 
             // cmbChiNhanh
             // 
+            this.cmbChiNhanh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbChiNhanh.FormattingEnabled = true;
             this.cmbChiNhanh.Location = new System.Drawing.Point(243, 39);
             this.cmbChiNhanh.Name = "cmbChiNhanh";
@@ -287,8 +288,12 @@ namespace NGANHANG.MenuForm
             // 
             this.colSOTK.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colSOTK.AppearanceCell.Options.UseFont = true;
+            this.colSOTK.AppearanceCell.Options.UseTextOptions = true;
+            this.colSOTK.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.colSOTK.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colSOTK.AppearanceHeader.Options.UseFont = true;
+            this.colSOTK.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSOTK.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colSOTK.Caption = "Số tài khoản";
             this.colSOTK.FieldName = "SOTK";
             this.colSOTK.MinWidth = 25;
@@ -302,8 +307,12 @@ namespace NGANHANG.MenuForm
             // 
             this.colCMND1.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colCMND1.AppearanceCell.Options.UseFont = true;
+            this.colCMND1.AppearanceCell.Options.UseTextOptions = true;
+            this.colCMND1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.colCMND1.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colCMND1.AppearanceHeader.Options.UseFont = true;
+            this.colCMND1.AppearanceHeader.Options.UseTextOptions = true;
+            this.colCMND1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colCMND1.FieldName = "CMND";
             this.colCMND1.MinWidth = 25;
             this.colCMND1.Name = "colCMND1";
@@ -316,9 +325,15 @@ namespace NGANHANG.MenuForm
             // 
             this.colSODU.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colSODU.AppearanceCell.Options.UseFont = true;
+            this.colSODU.AppearanceCell.Options.UseTextOptions = true;
+            this.colSODU.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.colSODU.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colSODU.AppearanceHeader.Options.UseFont = true;
+            this.colSODU.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSODU.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colSODU.Caption = "Số dư";
+            this.colSODU.DisplayFormat.FormatString = "n0";
+            this.colSODU.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSODU.FieldName = "SODU";
             this.colSODU.MinWidth = 25;
             this.colSODU.Name = "colSODU";
@@ -331,8 +346,12 @@ namespace NGANHANG.MenuForm
             // 
             this.colMACN.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colMACN.AppearanceCell.Options.UseFont = true;
+            this.colMACN.AppearanceCell.Options.UseTextOptions = true;
+            this.colMACN.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colMACN.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colMACN.AppearanceHeader.Options.UseFont = true;
+            this.colMACN.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMACN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colMACN.Caption = "Mã chi nhánh";
             this.colMACN.FieldName = "MACN";
             this.colMACN.MinWidth = 25;
