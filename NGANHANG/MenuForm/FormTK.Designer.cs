@@ -58,6 +58,7 @@ namespace NGANHANG.MenuForm
             this.colCMND1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSODU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMACN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNGAYMOTK = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsTaiKhoan)).BeginInit();
@@ -280,7 +281,8 @@ namespace NGANHANG.MenuForm
             this.colSOTK,
             this.colCMND1,
             this.colSODU,
-            this.colMACN});
+            this.colMACN,
+            this.colNGAYMOTK});
             this.gridView1.GridControl = this.gcTaiKhoan;
             this.gridView1.Name = "gridView1";
             // 
@@ -313,6 +315,7 @@ namespace NGANHANG.MenuForm
             this.colCMND1.AppearanceHeader.Options.UseFont = true;
             this.colCMND1.AppearanceHeader.Options.UseTextOptions = true;
             this.colCMND1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colCMND1.Caption = "CMND";
             this.colCMND1.FieldName = "CMND";
             this.colCMND1.MinWidth = 25;
             this.colCMND1.Name = "colCMND1";
@@ -332,12 +335,9 @@ namespace NGANHANG.MenuForm
             this.colSODU.AppearanceHeader.Options.UseTextOptions = true;
             this.colSODU.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colSODU.Caption = "Số dư";
-            this.colSODU.DisplayFormat.FormatString = "n0";
-            this.colSODU.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSODU.FieldName = "SODU";
             this.colSODU.MinWidth = 25;
             this.colSODU.Name = "colSODU";
-            this.colSODU.OptionsColumn.ReadOnly = true;
             this.colSODU.Visible = true;
             this.colSODU.VisibleIndex = 2;
             this.colSODU.Width = 93;
@@ -347,7 +347,7 @@ namespace NGANHANG.MenuForm
             this.colMACN.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colMACN.AppearanceCell.Options.UseFont = true;
             this.colMACN.AppearanceCell.Options.UseTextOptions = true;
-            this.colMACN.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMACN.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.colMACN.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colMACN.AppearanceHeader.Options.UseFont = true;
             this.colMACN.AppearanceHeader.Options.UseTextOptions = true;
@@ -360,6 +360,25 @@ namespace NGANHANG.MenuForm
             this.colMACN.Visible = true;
             this.colMACN.VisibleIndex = 3;
             this.colMACN.Width = 93;
+            // 
+            // colNGAYMOTK
+            // 
+            this.colNGAYMOTK.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colNGAYMOTK.AppearanceCell.Options.UseFont = true;
+            this.colNGAYMOTK.AppearanceCell.Options.UseTextOptions = true;
+            this.colNGAYMOTK.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.colNGAYMOTK.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colNGAYMOTK.AppearanceHeader.Options.UseFont = true;
+            this.colNGAYMOTK.AppearanceHeader.Options.UseTextOptions = true;
+            this.colNGAYMOTK.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colNGAYMOTK.Caption = "Ngày mở tài khoản";
+            this.colNGAYMOTK.FieldName = "NGAYMOTK";
+            this.colNGAYMOTK.MinWidth = 25;
+            this.colNGAYMOTK.Name = "colNGAYMOTK";
+            this.colNGAYMOTK.OptionsColumn.ReadOnly = true;
+            this.colNGAYMOTK.Visible = true;
+            this.colNGAYMOTK.VisibleIndex = 4;
+            this.colNGAYMOTK.Width = 93;
             // 
             // FormTK
             // 
@@ -413,10 +432,11 @@ namespace NGANHANG.MenuForm
         private System.Windows.Forms.ComboBox cmbChiNhanh;
         private System.Windows.Forms.Label lbChiNhanh;
         private DevExpress.XtraGrid.Columns.GridColumn colCMND;
+        private DevExpress.XtraBars.BarButtonItem btnXoa;
         private DevExpress.XtraGrid.Columns.GridColumn colSOTK;
         private DevExpress.XtraGrid.Columns.GridColumn colCMND1;
         private DevExpress.XtraGrid.Columns.GridColumn colSODU;
         private DevExpress.XtraGrid.Columns.GridColumn colMACN;
-        private DevExpress.XtraBars.BarButtonItem btnXoa;
+        private DevExpress.XtraGrid.Columns.GridColumn colNGAYMOTK;
     }
 }

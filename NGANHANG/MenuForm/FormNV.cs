@@ -154,6 +154,7 @@ namespace NGANHANG.MenuForm
             //step 2: AddNew tu dong nhay xuong them 1 dong moi
             bdsNhanVien.AddNew();
             txtMACN.EditValue = MACN;
+            txtMACN.Enabled = false;
 
             //step 3
 
@@ -477,9 +478,10 @@ namespace NGANHANG.MenuForm
             {
                 MessageBox.Show("Hãy chọn chi nhánh khác chi nhánh bạn đang đăng nhập", "Thông báo", MessageBoxButtons.OK);
             }
-
+            Console.WriteLine(ChiNhanh);
             String MaChiNhanhHienTai = "";
             String MaChiNhanhMoi = "";
+            String MANVMoi = "";
             int ViTriHienTai = bdsNhanVien.Position;
             String maNhanVien = ((DataRowView)bdsNhanVien[ViTriHienTai])["MANV"].ToString();
 
@@ -501,13 +503,13 @@ namespace NGANHANG.MenuForm
             Console.WriteLine("Mã chi nhánh hiện tại: " + MaChiNhanhHienTai);
             Console.WriteLine("Mã chi nhánh mới: " + MaChiNhanhMoi);
 
-            String undoQuery = "EXEC SP_CHUYENCHINHANH " + maNhanVien + ",'" + MaChiNhanhMoi + "'";
+            String undoQuery = "EXEC SP_CHUYENCHINHANH '" + maNhanVien + "','" + MaChiNhanhMoi + "','" + MANVMoi + "'";
             undoList.Push(undoQuery);
 
             Program.servernameleft = ChiNhanh;
             Console.WriteLine("Tên server còn lại" + Program.servernameleft);
 
-            String Query = "EXEX SP_CHUYENCHINHANH " + maNhanVien + ",'" + MaChiNhanhMoi + "'";
+            String Query = "EXEC SP_CHUYENCHINHANH '" + maNhanVien + "','" + MaChiNhanhMoi + "','" + MANVMoi + "'";
             Console.WriteLine("undoQuery: " + undoQuery);
             Console.WriteLine("Query: " + Query);
 
