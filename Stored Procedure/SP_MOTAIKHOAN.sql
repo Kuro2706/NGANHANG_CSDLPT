@@ -1,0 +1,32 @@
+USE [NGANHANG]
+GO
+
+/****** Object:  StoredProcedure [dbo].[SP_MOTAIKHOAN]    Script Date: 09/05/2024 23:01:12 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER PROCEDURE [dbo].[SP_MOTAIKHOAN]
+  @SOTK nvarchar(9),
+  @CMND nvarchar(10),
+  @SODU money,
+  @MACN nvarchar(10)
+AS
+BEGIN
+  BEGIN TRY
+    INSERT INTO LINK0.NGANHANG.dbo.TaiKhoan (SOTK, CMND, SODU, MACN, NGAYMOTK) VALUES (@SOTK, @CMND, @SODU, @MACN, GETDATE());
+    RETURN 0;
+  END TRY
+  BEGIN CATCH
+	DECLARE @ErrorMessage NVARCHAR(4000);
+    SET @ErrorMessage = ERROR_MESSAGE();
+    RAISERROR(@ErrorMessage, 16, 1);
+    RETURN 1;
+  END CATCH;
+END;
+
+
+GO
+

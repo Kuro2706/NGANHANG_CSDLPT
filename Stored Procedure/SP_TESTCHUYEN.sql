@@ -1,17 +1,17 @@
 USE [NGANHANG]
 GO
 
-/****** Object:  StoredProcedure [dbo].[SP_CHUYENCHINHANH]    Script Date: 09/05/2024 22:58:39 ******/
+/****** Object:  StoredProcedure [dbo].[SP_TESTCHUYEN]    Script Date: 09/05/2024 23:01:34 ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
 
-ALTER PROCEDURE [dbo].[SP_CHUYENCHINHANH]
-   @MANV nvarchar(10),
+ALTER PROCEDURE [dbo].[SP_TESTCHUYEN]
+	@MANV nvarchar(10),
 	@MACN nvarchar(10),
-	@MANVMOI nvarchar(10)
+	@MANVMOI nvarchar(10) OUTPUT
 AS
 DECLARE @LGNAME nvarchar(50)
 DECLARE @USERNAME nvarchar(50)
@@ -39,12 +39,12 @@ BEGIN
         END
 
 		ELSE
-		-- Nếu chưa tồn tại thì thêm mới hoàn toàn vào chi nhánh mới 
+		-- Nếu chưa tồn tại thì thêm mới hoàn toàn vào chi nhánh mới
 		BEGIN
 			INSERT INTO LINK1.NGANHANG.DBO.NhanVien (MANV, HO, TEN, CMND, DIACHI, PHAI, SODT, MACN, TrangThaiXoa)
-			VALUES (@MANVMOI, @HO, @TEN, @CMND, @DIACHI, @PHAI, @SODT, @MACN, 0)
+			VALUES ((SELECT MAX(MANV) FROM LINK0.NGANHANG.dbo.NhanVien) + 1, @HO, @TEN, @CMND, @DIACHI, @PHAI, @SODT, @MACN, 0)
 		END
-		
+
 		--Đổi trạng thái đối với tài khoản cũ ở site hiện tại
 		UPDATE DBO.NhanVien
 		SET TrangThaiXoa = 1
@@ -61,7 +61,6 @@ BEGIN
 			EXEC SP_DROPLOGIN @LGNAME;
         END
 END
-
 
 GO
 
