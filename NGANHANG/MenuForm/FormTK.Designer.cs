@@ -347,7 +347,7 @@ namespace NGANHANG.MenuForm
             this.colMACN.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colMACN.AppearanceCell.Options.UseFont = true;
             this.colMACN.AppearanceCell.Options.UseTextOptions = true;
-            this.colMACN.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.colMACN.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colMACN.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colMACN.AppearanceHeader.Options.UseFont = true;
             this.colMACN.AppearanceHeader.Options.UseTextOptions = true;

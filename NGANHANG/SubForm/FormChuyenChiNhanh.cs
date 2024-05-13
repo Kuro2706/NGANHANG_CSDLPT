@@ -40,15 +40,11 @@ namespace NGANHANG.SubForm
         public MyDelegate branchTransfer;
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
-            if (cmbChiNhanh.Text.Trim().Equals(""))
-            {
-                MessageBox.Show("Vui lòng chọn chi nhánh", "Thông báo", MessageBoxButtons.OK);
-                return;
-            }
             DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn chuyển nhân viên này đi ?", "Thông báo", MessageBoxButtons.OK);
             if(dialogResult == DialogResult.OK)
             {
                 branchTransfer(cmbChiNhanh.SelectedValue.ToString());
+                Console.WriteLine(cmbChiNhanh.SelectedValue.ToString());
             }
             this.Dispose();
         }
