@@ -415,37 +415,6 @@ namespace NGANHANG.MenuForm
                     DanhDauXoa = false;
                     Program.ExecSqlNonQuery(undoQuery);
                 }
-                if (undoQuery.Contains("SP_CHUYENCHINHANH"))
-                {
-                    try
-                    {
-                        String chiNhanhHienTai = Program.servername;
-                        String chiNhanhChuyenToi = Program.servernameleft;
-
-                        Program.servername = chiNhanhChuyenToi;
-                        Program.loginName = Program.remoteLogin;
-                        Program.loginPassword = Program.remotePassword;
-
-                        if (Program.KetNoi() == 0)
-                        {
-                            return;
-                        }
-
-                        Program.ExecSqlNonQuery(undoQuery);
-
-                        MessageBox.Show("Chuyển nhân viên trở lại thành công", "Thông báo", MessageBoxButtons.OK);
-                        Program.servername = chiNhanhHienTai;
-                        Program.loginName = Program.currentLogin;
-                        Program.loginPassword = Program.currentPassword;
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Chuyển nhân viên thất bại \n" + ex.Message, "Thông báo", MessageBoxButtons.OK);
-                        return;
-                    }
-                    bdsNhanVien.Position = ViTri;
-
-                }
             }
         }
         private void btnLamMoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -456,7 +425,7 @@ namespace NGANHANG.MenuForm
                 this.btnSua.Enabled = true;
                 this.btnXoa.Enabled = true;
                 this.btnGhi.Enabled = true;
-                this.btnHoanTac.Enabled = false;
+                this.btnHoanTac.Enabled = true;
                 this.btnLamMoi.Enabled = true;
                 this.btnTHOAT.Enabled = true;
                 this.btnChuyenChiNhanh.Enabled = true;
@@ -474,47 +443,39 @@ namespace NGANHANG.MenuForm
 
         public void ChuyenChiNhanh(String ChiNhanh)
         {
-            if(Program.servername == ChiNhanh)
+            if (Program.servername == ChiNhanh)
             {
                 MessageBox.Show("Hãy chọn chi nhánh khác chi nhánh bạn đang đăng nhập", "Thông báo", MessageBoxButtons.OK);
+                return;
             }
+            
             Console.WriteLine(ChiNhanh);
             String MaChiNhanhHienTai = "";
             String MaChiNhanhMoi = "";
-            String MANVMoi = "";
             int ViTriHienTai = bdsNhanVien.Position;
             String maNhanVien = ((DataRowView)bdsNhanVien[ViTriHienTai])["MANV"].ToString();
 
-            if(ChiNhanh.Contains("1"))
-            {
-                MaChiNhanhHienTai = "BENTHANH";
-                MaChiNhanhMoi = "TANDINH";
-            }
-            else if (ChiNhanh.Contains("0"))
+            if (ChiNhanh.Contains("MSSQLSERVER1"))
             {
                 MaChiNhanhHienTai = "TANDINH";
                 MaChiNhanhMoi = "BENTHANH";
             }
-            else
+            if (ChiNhanh.Contains("MSSQLSERVER2"))
             {
-                MessageBox.Show("Mã chi nhánh không hợp lệ", "Thông báo", MessageBoxButtons.OK);
-                return;
+                MaChiNhanhHienTai = "BENTHANH";
+                MaChiNhanhMoi = "TANDINH";
             }
             Console.WriteLine("Mã chi nhánh hiện tại: " + MaChiNhanhHienTai);
             Console.WriteLine("Mã chi nhánh mới: " + MaChiNhanhMoi);
 
-            String undoQuery = "EXEC SP_CHUYENCHINHANH '" + maNhanVien + "','" + MaChiNhanhMoi + "','" + MANVMoi + "'";
-            undoList.Push(undoQuery);
-
             Program.servernameleft = ChiNhanh;
             Console.WriteLine("Tên server còn lại" + Program.servernameleft);
 
-            String Query = "EXEC SP_CHUYENCHINHANH '" + maNhanVien + "','" + MaChiNhanhMoi + "','" + MANVMoi + "'";
-            Console.WriteLine("undoQuery: " + undoQuery);
+            String Query = "EXEC SP_CHUYENCHINHANH '" + maNhanVien + "','" + MaChiNhanhMoi + "'";
             Console.WriteLine("Query: " + Query);
 
 
-            SqlCommand sqlCommand = new SqlCommand(undoQuery, Program.conn);
+            SqlCommand sqlCommand = new SqlCommand(Query, Program.conn);
             try
             {
                 Program.myReader = Program.ExecSqlDataReader(Query);
@@ -524,6 +485,7 @@ namespace NGANHANG.MenuForm
                 {
                     return;/*khong co ket qua tra ve thi ket thuc luon*/
                 }
+                Program.myReader.Close();
             }
             catch (Exception ex)
             {
@@ -534,6 +496,7 @@ namespace NGANHANG.MenuForm
             }
             this.nhanVienTableAdapter.Update(this.dataSet.NhanVien);
         }
+        
         private void btnChuyenChiNhanh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form f = this.CheckExists(typeof(FormChuyenChiNhanh));
@@ -563,9 +526,6 @@ namespace NGANHANG.MenuForm
 
             //dong goi ham ChuyenChiNhanh tu formNhanVien dem ve formChuyenChiNhanh de lam viec
             form.branchTransfer = new FormChuyenChiNhanh.MyDelegate(ChuyenChiNhanh);
-
-            //hoan tac
-            this.btnHoanTac.Enabled = true;
         }
 
         private void btnTHOAT_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
