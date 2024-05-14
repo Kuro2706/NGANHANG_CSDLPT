@@ -228,7 +228,17 @@ namespace NGANHANG
 
         private void btnLietKeTaiKhoan_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            Form f = this.CheckExists(typeof(Frpt_LietKeTaiKhoanMoTrongMotKhoangThoiGian));
+            if (f != null)
+            {
+                f.Activate();
+            }
+            else
+            {
+                Frpt_LietKeTaiKhoanMoTrongMotKhoangThoiGian form = new Frpt_LietKeTaiKhoanMoTrongMotKhoangThoiGian();
+                form.MdiParent = this;
+                form.Show();
+            }
         }
 
         private void btnLietKeKhachHang_ItemClick(object sender, ItemClickEventArgs e)

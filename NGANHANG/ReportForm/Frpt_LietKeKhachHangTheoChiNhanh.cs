@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -75,18 +76,8 @@ namespace NGANHANG.ReportForm
         }
         private void btnPreview_Click(object sender, EventArgs e)
         {
-            int type = 0;
-            if (cmbChiNhanh.SelectedIndex == Program.mChiNhanh)
-            {
-                type = 1;
-            }
-            else if (cmbChiNhanh.SelectedIndex != Program.mChiNhanh)
-            {
-                type = 2;
-            }
-
-            Xrpt_LietKeKhachHangTheoChiNhanh report = new Xrpt_LietKeKhachHangTheoChiNhanh(type);
-            report.lbTenChiNhanh.Text = cmbChiNhanh.Text;
+            Xrpt_LietKeKhachHangTheoChiNhanh report = new Xrpt_LietKeKhachHangTheoChiNhanh();
+            report.lbTieuDe.Text = "DANH SÁCH KHÁCH HÀNG Ở CHI NHÁNH "+cmbChiNhanh.Text;
 
             ReportPrintTool print = new ReportPrintTool(report);
             print.ShowPreviewDialog();

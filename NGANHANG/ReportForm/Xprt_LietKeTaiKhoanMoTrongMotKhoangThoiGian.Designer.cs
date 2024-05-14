@@ -1,7 +1,7 @@
 ﻿
 namespace NGANHANG.ReportForm
 {
-    partial class Xrpt_LietKeKhachHangTheoChiNhanh
+    partial class Xprt_LietKeTaiKhoanMoTrongMotKhoangThoiGian
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,10 @@ namespace NGANHANG.ReportForm
         {
             this.components = new System.ComponentModel.Container();
             DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Xrpt_LietKeKhachHangTheoChiNhanh));
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter3 = new DevExpress.DataAccess.Sql.QueryParameter();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Xprt_LietKeTaiKhoanMoTrongMotKhoangThoiGian));
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.Title = new DevExpress.XtraReports.UI.XRControlStyle();
             this.DetailCaption1 = new DevExpress.XtraReports.UI.XRControlStyle();
@@ -41,19 +44,14 @@ namespace NGANHANG.ReportForm
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
-            this.lb2 = new DevExpress.XtraReports.UI.XRLabel();
-            this.lb1 = new DevExpress.XtraReports.UI.XRLabel();
-            this.lbTenNH = new DevExpress.XtraReports.UI.XRLabel();
-            this.lbTieuDe = new DevExpress.XtraReports.UI.XRLabel();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.table2 = new DevExpress.XtraReports.UI.XRTable();
             this.tableRow2 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.tableCell6 = new DevExpress.XtraReports.UI.XRTableCell();
             this.tableCell7 = new DevExpress.XtraReports.UI.XRTableCell();
             this.tableCell8 = new DevExpress.XtraReports.UI.XRTableCell();
             this.tableCell9 = new DevExpress.XtraReports.UI.XRTableCell();
             this.tableCell10 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.tableCell11 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.tableCell12 = new DevExpress.XtraReports.UI.XRTableCell();
             this.PageHeader = new DevExpress.XtraReports.UI.PageHeaderBand();
             this.table1 = new DevExpress.XtraReports.UI.XRTable();
             this.tableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
@@ -62,10 +60,13 @@ namespace NGANHANG.ReportForm
             this.tableCell3 = new DevExpress.XtraReports.UI.XRTableCell();
             this.tableCell4 = new DevExpress.XtraReports.UI.XRTableCell();
             this.tableCell5 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.tableCell6 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.lbTieuDe = new DevExpress.XtraReports.UI.XRLabel();
+            this.lbTenNH = new DevExpress.XtraReports.UI.XRLabel();
+            this.lb1 = new DevExpress.XtraReports.UI.XRLabel();
+            this.lb2 = new DevExpress.XtraReports.UI.XRLabel();
             this.PageFooter = new DevExpress.XtraReports.UI.PageFooterBand();
-            this.pageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.pageInfo2 = new DevExpress.XtraReports.UI.XRPageInfo();
+            this.pageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
             ((System.ComponentModel.ISupportInitialize)(this.table2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -74,8 +75,20 @@ namespace NGANHANG.ReportForm
             // 
             this.sqlDataSource1.ConnectionName = "NGANHANG.Properties.Settings.NGANHANGConnectionString";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery1.Name = "SP_LIETKEKHACHHANGTHEOCHINHANH";
-            storedProcQuery1.StoredProcName = "SP_LIETKEKHACHHANGTHEOCHINHANH";
+            storedProcQuery1.Name = "sp_LIETKETAIKHOANMOTRONG1THOIGIAN";
+            queryParameter1.Name = "@MACN";
+            queryParameter1.Type = typeof(string);
+            queryParameter1.ValueInfo = "HAICN";
+            queryParameter2.Name = "@NGAYBD";
+            queryParameter2.Type = typeof(System.DateTime);
+            queryParameter2.ValueInfo = "2021-01-01";
+            queryParameter3.Name = "@NGAYKT";
+            queryParameter3.Type = typeof(System.DateTime);
+            queryParameter3.ValueInfo = "2024-05-14";
+            storedProcQuery1.Parameters.Add(queryParameter1);
+            storedProcQuery1.Parameters.Add(queryParameter2);
+            storedProcQuery1.Parameters.Add(queryParameter3);
+            storedProcQuery1.StoredProcName = "sp_LIETKETAIKHOANMOTRONG1THOIGIAN";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
             storedProcQuery1});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
@@ -147,69 +160,13 @@ namespace NGANHANG.ReportForm
             // ReportHeader
             // 
             this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.lb2,
-            this.lb1,
+            this.lbTieuDe,
             this.lbTenNH,
-            this.lbTieuDe});
+            this.lb1,
+            this.lb2});
             this.ReportHeader.Dpi = 254F;
-            this.ReportHeader.HeightF = 352.8201F;
+            this.ReportHeader.HeightF = 294.9159F;
             this.ReportHeader.Name = "ReportHeader";
-            // 
-            // lb2
-            // 
-            this.lb2.Dpi = 254F;
-            this.lb2.Font = new System.Drawing.Font("Times New Roman", 12.10084F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb2.LocationFloat = new DevExpress.Utils.PointFloat(958.1563F, 121.8401F);
-            this.lb2.Multiline = true;
-            this.lb2.Name = "lb2";
-            this.lb2.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.lb2.SizeF = new System.Drawing.SizeF(574.1681F, 81.89899F);
-            this.lb2.StylePriority.UseFont = false;
-            this.lb2.StylePriority.UseTextAlignment = false;
-            this.lb2.Text = "Độc lập - Tự do - Hạnh phúc";
-            this.lb2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // lb1
-            // 
-            this.lb1.Dpi = 254F;
-            this.lb1.Font = new System.Drawing.Font("Times New Roman", 12.10084F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb1.LocationFloat = new DevExpress.Utils.PointFloat(805.1725F, 39.94115F);
-            this.lb1.Multiline = true;
-            this.lb1.Name = "lb1";
-            this.lb1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.lb1.SizeF = new System.Drawing.SizeF(894.8275F, 81.89899F);
-            this.lb1.StylePriority.UseFont = false;
-            this.lb1.StylePriority.UseTextAlignment = false;
-            this.lb1.Text = "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM";
-            this.lb1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            // 
-            // lbTenNH
-            // 
-            this.lbTenNH.Dpi = 254F;
-            this.lbTenNH.Font = new System.Drawing.Font("Times New Roman", 12.10084F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTenNH.LocationFloat = new DevExpress.Utils.PointFloat(0F, 39.94115F);
-            this.lbTenNH.Multiline = true;
-            this.lbTenNH.Name = "lbTenNH";
-            this.lbTenNH.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.lbTenNH.SizeF = new System.Drawing.SizeF(542.1513F, 81.89899F);
-            this.lbTenNH.StylePriority.UseFont = false;
-            this.lbTenNH.StylePriority.UseTextAlignment = false;
-            this.lbTenNH.Text = "NGÂN HÀNG ABC";
-            this.lbTenNH.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
-            // lbTieuDe
-            // 
-            this.lbTieuDe.Dpi = 254F;
-            this.lbTieuDe.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold);
-            this.lbTieuDe.ForeColor = System.Drawing.Color.Red;
-            this.lbTieuDe.LocationFloat = new DevExpress.Utils.PointFloat(12.99999F, 273.4034F);
-            this.lbTieuDe.Name = "lbTieuDe";
-            this.lbTieuDe.SizeF = new System.Drawing.SizeF(1674F, 61.45361F);
-            this.lbTieuDe.StyleName = "Title";
-            this.lbTieuDe.StylePriority.UseFont = false;
-            this.lbTieuDe.StylePriority.UseForeColor = false;
-            this.lbTieuDe.StylePriority.UseTextAlignment = false;
-            this.lbTieuDe.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // Detail
             // 
@@ -233,15 +190,35 @@ namespace NGANHANG.ReportForm
             // tableRow2
             // 
             this.tableRow2.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.tableCell6,
             this.tableCell7,
             this.tableCell8,
             this.tableCell9,
-            this.tableCell10,
-            this.tableCell11,
-            this.tableCell12});
+            this.tableCell10});
             this.tableRow2.Dpi = 254F;
             this.tableRow2.Name = "tableRow2";
             this.tableRow2.Weight = 11.683999633789062D;
+            // 
+            // tableCell6
+            // 
+            this.tableCell6.BorderColor = System.Drawing.Color.Black;
+            this.tableCell6.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            | DevExpress.XtraPrinting.BorderSide.Right) 
+            | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.tableCell6.BorderWidth = 1F;
+            this.tableCell6.Dpi = 254F;
+            this.tableCell6.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[SOTK]")});
+            this.tableCell6.Font = new System.Drawing.Font("Times New Roman", 12.10084F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tableCell6.Name = "tableCell6";
+            this.tableCell6.StyleName = "DetailData1";
+            this.tableCell6.StylePriority.UseBorderColor = false;
+            this.tableCell6.StylePriority.UseBorders = false;
+            this.tableCell6.StylePriority.UseBorderWidth = false;
+            this.tableCell6.StylePriority.UseFont = false;
+            this.tableCell6.StylePriority.UseTextAlignment = false;
+            this.tableCell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.tableCell6.Weight = 0.20325875614121117D;
             // 
             // tableCell7
             // 
@@ -252,7 +229,7 @@ namespace NGANHANG.ReportForm
             this.tableCell7.BorderWidth = 1F;
             this.tableCell7.Dpi = 254F;
             this.tableCell7.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[HOTEN]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[CMND]")});
             this.tableCell7.Font = new System.Drawing.Font("Times New Roman", 12.10084F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableCell7.Name = "tableCell7";
             this.tableCell7.StyleName = "DetailData1";
@@ -261,8 +238,8 @@ namespace NGANHANG.ReportForm
             this.tableCell7.StylePriority.UseBorderWidth = false;
             this.tableCell7.StylePriority.UseFont = false;
             this.tableCell7.StylePriority.UseTextAlignment = false;
-            this.tableCell7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.tableCell7.Weight = 0.20848613000467975D;
+            this.tableCell7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.tableCell7.Weight = 0.17500023343733365D;
             // 
             // tableCell8
             // 
@@ -273,7 +250,7 @@ namespace NGANHANG.ReportForm
             this.tableCell8.BorderWidth = 1F;
             this.tableCell8.Dpi = 254F;
             this.tableCell8.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[DIACHI]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[SODU]")});
             this.tableCell8.Font = new System.Drawing.Font("Times New Roman", 12.10084F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableCell8.Name = "tableCell8";
             this.tableCell8.StyleName = "DetailData1";
@@ -282,8 +259,9 @@ namespace NGANHANG.ReportForm
             this.tableCell8.StylePriority.UseBorderWidth = false;
             this.tableCell8.StylePriority.UseFont = false;
             this.tableCell8.StylePriority.UseTextAlignment = false;
-            this.tableCell8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.tableCell8.Weight = 0.1587422451477063D;
+            this.tableCell8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.tableCell8.TextFormatString = "{0:#,#}";
+            this.tableCell8.Weight = 0.20294029632825436D;
             // 
             // tableCell9
             // 
@@ -294,7 +272,7 @@ namespace NGANHANG.ReportForm
             this.tableCell9.BorderWidth = 1F;
             this.tableCell9.Dpi = 254F;
             this.tableCell9.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[PHAI]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[MACN]")});
             this.tableCell9.Font = new System.Drawing.Font("Times New Roman", 12.10084F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableCell9.Name = "tableCell9";
             this.tableCell9.StyleName = "DetailData1";
@@ -303,8 +281,8 @@ namespace NGANHANG.ReportForm
             this.tableCell9.StylePriority.UseBorderWidth = false;
             this.tableCell9.StylePriority.UseFont = false;
             this.tableCell9.StylePriority.UseTextAlignment = false;
-            this.tableCell9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.tableCell9.Weight = 0.137791676128112D;
+            this.tableCell9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.tableCell9.Weight = 0.18255478796049549D;
             // 
             // tableCell10
             // 
@@ -315,7 +293,7 @@ namespace NGANHANG.ReportForm
             this.tableCell10.BorderWidth = 1F;
             this.tableCell10.Dpi = 254F;
             this.tableCell10.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[CMND]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[NGAYMOTK]")});
             this.tableCell10.Font = new System.Drawing.Font("Times New Roman", 12.10084F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableCell10.Name = "tableCell10";
             this.tableCell10.StyleName = "DetailData1";
@@ -325,75 +303,25 @@ namespace NGANHANG.ReportForm
             this.tableCell10.StylePriority.UseFont = false;
             this.tableCell10.StylePriority.UseTextAlignment = false;
             this.tableCell10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.tableCell10.Weight = 0.14752222409017873D;
-            // 
-            // tableCell11
-            // 
-            this.tableCell11.BorderColor = System.Drawing.Color.Black;
-            this.tableCell11.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
-            | DevExpress.XtraPrinting.BorderSide.Right) 
-            | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.tableCell11.BorderWidth = 1F;
-            this.tableCell11.Dpi = 254F;
-            this.tableCell11.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[NGAYCAP]")});
-            this.tableCell11.Font = new System.Drawing.Font("Times New Roman", 12.10084F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableCell11.Name = "tableCell11";
-            this.tableCell11.StyleName = "DetailData1";
-            this.tableCell11.StylePriority.UseBorderColor = false;
-            this.tableCell11.StylePriority.UseBorders = false;
-            this.tableCell11.StylePriority.UseBorderWidth = false;
-            this.tableCell11.StylePriority.UseFont = false;
-            this.tableCell11.StylePriority.UseTextAlignment = false;
-            this.tableCell11.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.tableCell11.TextFormatString = "{0:dd/MM/yyyy}";
-            this.tableCell11.Weight = 0.18417430281136896D;
-            // 
-            // tableCell12
-            // 
-            this.tableCell12.BorderColor = System.Drawing.Color.Black;
-            this.tableCell12.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
-            | DevExpress.XtraPrinting.BorderSide.Right) 
-            | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.tableCell12.BorderWidth = 1F;
-            this.tableCell12.Dpi = 254F;
-            this.tableCell12.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[SODT]")});
-            this.tableCell12.Font = new System.Drawing.Font("Times New Roman", 12.10084F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableCell12.Name = "tableCell12";
-            this.tableCell12.StyleName = "DetailData1";
-            this.tableCell12.StylePriority.UseBorderColor = false;
-            this.tableCell12.StylePriority.UseBorders = false;
-            this.tableCell12.StylePriority.UseBorderWidth = false;
-            this.tableCell12.StylePriority.UseFont = false;
-            this.tableCell12.StylePriority.UseTextAlignment = false;
-            this.tableCell12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.tableCell12.Weight = 0.16328340386643772D;
+            this.tableCell10.TextFormatString = "{0:dd/MM/yyyy}";
+            this.tableCell10.Weight = 0.23624590818118885D;
             // 
             // PageHeader
             // 
             this.PageHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.table1});
             this.PageHeader.Dpi = 254F;
-            this.PageHeader.HeightF = 71.12F;
+            this.PageHeader.HeightF = 72.35634F;
             this.PageHeader.Name = "PageHeader";
             // 
             // table1
             // 
-            this.table1.BorderColor = System.Drawing.Color.Transparent;
             this.table1.Dpi = 254F;
-            this.table1.Font = new System.Drawing.Font("Times New Roman", 12.10084F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.table1.ForeColor = System.Drawing.Color.Transparent;
             this.table1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.table1.Name = "table1";
             this.table1.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.tableRow1});
             this.table1.SizeF = new System.Drawing.SizeF(1700F, 71.12F);
-            this.table1.StylePriority.UseBorderColor = false;
-            this.table1.StylePriority.UseFont = false;
-            this.table1.StylePriority.UseForeColor = false;
-            this.table1.StylePriority.UseTextAlignment = false;
-            this.table1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // tableRow1
             // 
@@ -402,8 +330,7 @@ namespace NGANHANG.ReportForm
             this.tableCell2,
             this.tableCell3,
             this.tableCell4,
-            this.tableCell5,
-            this.tableCell6});
+            this.tableCell5});
             this.tableRow1.Dpi = 254F;
             this.tableRow1.Name = "tableRow1";
             this.tableRow1.Weight = 1D;
@@ -428,9 +355,9 @@ namespace NGANHANG.ReportForm
             this.tableCell1.StylePriority.UseFont = false;
             this.tableCell1.StylePriority.UseForeColor = false;
             this.tableCell1.StylePriority.UseTextAlignment = false;
-            this.tableCell1.Text = "Họ tên";
+            this.tableCell1.Text = "Số tài khoản";
             this.tableCell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.tableCell1.Weight = 0.20848613000467975D;
+            this.tableCell1.Weight = 0.20325875553265216D;
             // 
             // tableCell2
             // 
@@ -452,9 +379,9 @@ namespace NGANHANG.ReportForm
             this.tableCell2.StylePriority.UseFont = false;
             this.tableCell2.StylePriority.UseForeColor = false;
             this.tableCell2.StylePriority.UseTextAlignment = false;
-            this.tableCell2.Text = "Địa chỉ";
+            this.tableCell2.Text = "CMND";
             this.tableCell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.tableCell2.Weight = 0.1587422451477063D;
+            this.tableCell2.Weight = 0.17500023350495214D;
             // 
             // tableCell3
             // 
@@ -476,9 +403,9 @@ namespace NGANHANG.ReportForm
             this.tableCell3.StylePriority.UseFont = false;
             this.tableCell3.StylePriority.UseForeColor = false;
             this.tableCell3.StylePriority.UseTextAlignment = false;
-            this.tableCell3.Text = "Phái";
+            this.tableCell3.Text = "Số dư";
             this.tableCell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.tableCell3.Weight = 0.13779167612811205D;
+            this.tableCell3.Weight = 0.20294029581023115D;
             // 
             // tableCell4
             // 
@@ -500,9 +427,9 @@ namespace NGANHANG.ReportForm
             this.tableCell4.StylePriority.UseFont = false;
             this.tableCell4.StylePriority.UseForeColor = false;
             this.tableCell4.StylePriority.UseTextAlignment = false;
-            this.tableCell4.Text = "CMND";
+            this.tableCell4.Text = "Mã chi nhánh";
             this.tableCell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.tableCell4.Weight = 0.14752222409017873D;
+            this.tableCell4.Weight = 0.18255478789249829D;
             // 
             // tableCell5
             // 
@@ -524,42 +451,87 @@ namespace NGANHANG.ReportForm
             this.tableCell5.StylePriority.UseFont = false;
             this.tableCell5.StylePriority.UseForeColor = false;
             this.tableCell5.StylePriority.UseTextAlignment = false;
-            this.tableCell5.Text = "Ngày cấp";
+            this.tableCell5.Text = "Ngày mở tài khoản";
             this.tableCell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.tableCell5.Weight = 0.18417423100530406D;
+            this.tableCell5.Weight = 0.23624589135663321D;
             // 
-            // tableCell6
+            // lbTieuDe
             // 
-            this.tableCell6.BackColor = System.Drawing.Color.Cyan;
-            this.tableCell6.BorderColor = System.Drawing.Color.Black;
-            this.tableCell6.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
-            | DevExpress.XtraPrinting.BorderSide.Right) 
-            | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.tableCell6.BorderWidth = 1F;
-            this.tableCell6.Dpi = 254F;
-            this.tableCell6.Font = new System.Drawing.Font("Times New Roman", 12.10084F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableCell6.ForeColor = System.Drawing.Color.Black;
-            this.tableCell6.Name = "tableCell6";
-            this.tableCell6.StyleName = "DetailCaption1";
-            this.tableCell6.StylePriority.UseBackColor = false;
-            this.tableCell6.StylePriority.UseBorderColor = false;
-            this.tableCell6.StylePriority.UseBorders = false;
-            this.tableCell6.StylePriority.UseBorderWidth = false;
-            this.tableCell6.StylePriority.UseFont = false;
-            this.tableCell6.StylePriority.UseForeColor = false;
-            this.tableCell6.StylePriority.UseTextAlignment = false;
-            this.tableCell6.Text = "Số điện thoại";
-            this.tableCell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.tableCell6.Weight = 0.16328347567250262D;
+            this.lbTieuDe.Dpi = 254F;
+            this.lbTieuDe.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold);
+            this.lbTieuDe.ForeColor = System.Drawing.Color.Red;
+            this.lbTieuDe.LocationFloat = new DevExpress.Utils.PointFloat(12.99999F, 208.4622F);
+            this.lbTieuDe.Name = "lbTieuDe";
+            this.lbTieuDe.SizeF = new System.Drawing.SizeF(1674F, 61.45361F);
+            this.lbTieuDe.StyleName = "Title";
+            this.lbTieuDe.StylePriority.UseFont = false;
+            this.lbTieuDe.StylePriority.UseForeColor = false;
+            this.lbTieuDe.StylePriority.UseTextAlignment = false;
+            this.lbTieuDe.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // lbTenNH
+            // 
+            this.lbTenNH.Dpi = 254F;
+            this.lbTenNH.Font = new System.Drawing.Font("Times New Roman", 12.10084F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTenNH.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.lbTenNH.Multiline = true;
+            this.lbTenNH.Name = "lbTenNH";
+            this.lbTenNH.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.lbTenNH.SizeF = new System.Drawing.SizeF(542.1513F, 81.89899F);
+            this.lbTenNH.StylePriority.UseFont = false;
+            this.lbTenNH.StylePriority.UseTextAlignment = false;
+            this.lbTenNH.Text = "NGÂN HÀNG ABC";
+            this.lbTenNH.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
+            // lb1
+            // 
+            this.lb1.Dpi = 254F;
+            this.lb1.Font = new System.Drawing.Font("Times New Roman", 12.10084F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb1.LocationFloat = new DevExpress.Utils.PointFloat(805.1725F, 0F);
+            this.lb1.Multiline = true;
+            this.lb1.Name = "lb1";
+            this.lb1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.lb1.SizeF = new System.Drawing.SizeF(894.8275F, 81.89899F);
+            this.lb1.StylePriority.UseFont = false;
+            this.lb1.StylePriority.UseTextAlignment = false;
+            this.lb1.Text = "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM";
+            this.lb1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            // 
+            // lb2
+            // 
+            this.lb2.Dpi = 254F;
+            this.lb2.Font = new System.Drawing.Font("Times New Roman", 12.10084F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb2.LocationFloat = new DevExpress.Utils.PointFloat(958.1563F, 81.89896F);
+            this.lb2.Multiline = true;
+            this.lb2.Name = "lb2";
+            this.lb2.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.lb2.SizeF = new System.Drawing.SizeF(574.1681F, 81.89899F);
+            this.lb2.StylePriority.UseFont = false;
+            this.lb2.StylePriority.UseTextAlignment = false;
+            this.lb2.Text = "Độc lập - Tự do - Hạnh phúc";
+            this.lb2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // PageFooter
             // 
             this.PageFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.pageInfo1,
-            this.pageInfo2});
+            this.pageInfo2,
+            this.pageInfo1});
             this.PageFooter.Dpi = 254F;
             this.PageFooter.HeightF = 254F;
             this.PageFooter.Name = "PageFooter";
+            // 
+            // pageInfo2
+            // 
+            this.pageInfo2.Dpi = 254F;
+            this.pageInfo2.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pageInfo2.LocationFloat = new DevExpress.Utils.PointFloat(875.9999F, 12.99999F);
+            this.pageInfo2.Name = "pageInfo2";
+            this.pageInfo2.SizeF = new System.Drawing.SizeF(824F, 58F);
+            this.pageInfo2.StyleName = "PageInfo";
+            this.pageInfo2.StylePriority.UseFont = false;
+            this.pageInfo2.StylePriority.UseTextAlignment = false;
+            this.pageInfo2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.pageInfo2.TextFormatString = "{0}";
             // 
             // pageInfo1
             // 
@@ -575,20 +547,7 @@ namespace NGANHANG.ReportForm
             this.pageInfo1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.pageInfo1.TextFormatString = "{0:dd MMMM yyyy}";
             // 
-            // pageInfo2
-            // 
-            this.pageInfo2.Dpi = 254F;
-            this.pageInfo2.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pageInfo2.LocationFloat = new DevExpress.Utils.PointFloat(875.9999F, 12.99999F);
-            this.pageInfo2.Name = "pageInfo2";
-            this.pageInfo2.SizeF = new System.Drawing.SizeF(824F, 58F);
-            this.pageInfo2.StyleName = "PageInfo";
-            this.pageInfo2.StylePriority.UseFont = false;
-            this.pageInfo2.StylePriority.UseTextAlignment = false;
-            this.pageInfo2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.pageInfo2.TextFormatString = "{0}";
-            // 
-            // Xrpt_LietKeKhachHangTheoChiNhanh
+            // Xprt_LietKeTaiKhoanMoTrongMotKhoangThoiGian
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
             this.TopMargin,
@@ -599,7 +558,7 @@ namespace NGANHANG.ReportForm
             this.PageFooter});
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
             this.sqlDataSource1});
-            this.DataMember = "SP_LIETKEKHACHHANGTHEOCHINHANH";
+            this.DataMember = "sp_LIETKETAIKHOANMOTRONG1THOIGIAN";
             this.DataSource = this.sqlDataSource1;
             this.Dpi = 254F;
             this.Font = new System.Drawing.Font("Arial", 9.75F);
@@ -636,12 +595,11 @@ namespace NGANHANG.ReportForm
         private DevExpress.XtraReports.UI.DetailBand Detail;
         private DevExpress.XtraReports.UI.XRTable table2;
         private DevExpress.XtraReports.UI.XRTableRow tableRow2;
+        private DevExpress.XtraReports.UI.XRTableCell tableCell6;
         private DevExpress.XtraReports.UI.XRTableCell tableCell7;
         private DevExpress.XtraReports.UI.XRTableCell tableCell8;
         private DevExpress.XtraReports.UI.XRTableCell tableCell9;
         private DevExpress.XtraReports.UI.XRTableCell tableCell10;
-        private DevExpress.XtraReports.UI.XRTableCell tableCell11;
-        private DevExpress.XtraReports.UI.XRTableCell tableCell12;
         private DevExpress.XtraReports.UI.PageHeaderBand PageHeader;
         private DevExpress.XtraReports.UI.XRTable table1;
         private DevExpress.XtraReports.UI.XRTableRow tableRow1;
@@ -650,13 +608,12 @@ namespace NGANHANG.ReportForm
         private DevExpress.XtraReports.UI.XRTableCell tableCell3;
         private DevExpress.XtraReports.UI.XRTableCell tableCell4;
         private DevExpress.XtraReports.UI.XRTableCell tableCell5;
-        private DevExpress.XtraReports.UI.XRTableCell tableCell6;
-        private DevExpress.XtraReports.UI.PageFooterBand PageFooter;
-        private DevExpress.XtraReports.UI.XRPageInfo pageInfo1;
-        private DevExpress.XtraReports.UI.XRPageInfo pageInfo2;
-        private DevExpress.XtraReports.UI.XRLabel lb2;
-        private DevExpress.XtraReports.UI.XRLabel lb1;
-        private DevExpress.XtraReports.UI.XRLabel lbTenNH;
         public DevExpress.XtraReports.UI.XRLabel lbTieuDe;
+        private DevExpress.XtraReports.UI.XRLabel lbTenNH;
+        private DevExpress.XtraReports.UI.XRLabel lb1;
+        private DevExpress.XtraReports.UI.XRLabel lb2;
+        private DevExpress.XtraReports.UI.PageFooterBand PageFooter;
+        private DevExpress.XtraReports.UI.XRPageInfo pageInfo2;
+        private DevExpress.XtraReports.UI.XRPageInfo pageInfo1;
     }
 }
