@@ -574,7 +574,7 @@ namespace NGANHANG.MenuForm
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "FormChuyenTien";
-            this.Text = "FormChuyenTien";
+            this.Text = "Chuyển tiền";
             this.Load += new System.EventHandler(this.FormChuyenTien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);

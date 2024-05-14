@@ -345,7 +345,7 @@ namespace NGANHANG.SubForm
             this.Controls.Add(this.nhanVienGridControl);
             this.Name = "FormChonNV";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormChonNV";
+            this.Text = "Chọn nhân viên";
             this.Load += new System.EventHandler(this.FormChonNV_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsNhanVien)).EndInit();

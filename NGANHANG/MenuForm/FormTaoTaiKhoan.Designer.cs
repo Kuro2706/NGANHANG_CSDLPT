@@ -230,7 +230,7 @@ namespace NGANHANG.MenuForm
             this.Controls.Add(this.lbMANV);
             this.Controls.Add(this.lbTaoTaiKhoan);
             this.Name = "FormTaoTaiKhoan";
-            this.Text = "FormTaoTaiKhoan";
+            this.Text = "Tạo tài khoản";
             this.Load += new System.EventHandler(this.FormTaoTaiKhoan_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

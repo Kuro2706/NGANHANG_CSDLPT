@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraBars;
 using NGANHANG.MenuForm;
+using NGANHANG.ReportForm;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,6 +35,9 @@ namespace NGANHANG
                 btnDangXuat.Enabled = true;
                 btnTaoTaiKhoan.Enabled = true;
                 btnThoat.Enabled = true;
+                btnSaoKeGiaoDich.Enabled = true;
+                btnLietKeTaiKhoan.Enabled = true;
+                btnLietKeKhachHang.Enabled = true;
 
                 pageQuanLy.Visible = true;
                 pageNghiepVu.Visible = true;
@@ -45,6 +49,10 @@ namespace NGANHANG
                 btnDangXuat.Enabled = true;
                 btnTaoTaiKhoan.Enabled = true;
                 btnThoat.Enabled = true;
+                btnSaoKeGiaoDich.Enabled = true;
+                btnLietKeTaiKhoan.Enabled = true;
+                btnLietKeKhachHang.Enabled = true;
+
 
                 pageQuanLy.Visible = true;
                 pageNghiepVu.Visible = true;
@@ -208,6 +216,31 @@ namespace NGANHANG
             else
             {
                 FormGoiRut form = new FormGoiRut();
+                form.MdiParent = this;
+                form.Show();
+            }
+        }
+
+        private void btnSaoKeGiaoDich_ItemClick(object sender, ItemClickEventArgs e)
+        {
+        
+        }
+
+        private void btnLietKeTaiKhoan_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void btnLietKeKhachHang_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form f = this.CheckExists(typeof(Frpt_LietKeKhachHangTheoChiNhanh));
+            if (f != null)
+            {
+                f.Activate();
+            }
+            else
+            {
+                Frpt_LietKeKhachHangTheoChiNhanh form = new Frpt_LietKeKhachHangTheoChiNhanh();
                 form.MdiParent = this;
                 form.Show();
             }

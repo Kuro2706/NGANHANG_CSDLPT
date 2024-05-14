@@ -761,7 +761,7 @@ namespace NGANHANG.MenuForm
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "FormNV";
-            this.Text = "FormNV";
+            this.Text = "Nhân viên";
             this.Load += new System.EventHandler(this.FormNV_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();

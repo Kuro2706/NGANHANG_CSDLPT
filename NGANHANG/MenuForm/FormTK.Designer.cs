@@ -392,7 +392,7 @@ namespace NGANHANG.MenuForm
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "FormTK";
-            this.Text = "FormTK";
+            this.Text = "Tài khoản";
             this.Load += new System.EventHandler(this.FormTK_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();

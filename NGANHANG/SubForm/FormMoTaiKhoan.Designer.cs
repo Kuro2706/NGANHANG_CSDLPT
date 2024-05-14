@@ -181,7 +181,7 @@ namespace NGANHANG.SubForm
             this.Controls.Add(this.label1);
             this.Name = "FormMoTaiKhoan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormMoTaiKhoan";
+            this.Text = "Mở tài khoản";
             this.Load += new System.EventHandler(this.FormMoTaiKhoan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtCMND.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSTK.Properties)).EndInit();

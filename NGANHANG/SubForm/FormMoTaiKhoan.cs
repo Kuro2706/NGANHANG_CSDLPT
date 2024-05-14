@@ -28,6 +28,7 @@ namespace NGANHANG.SubForm
             cmbChiNhanh.DataSource = Program.bds_dspm;/*sao chep bingding source tu form dang nhap*/
             cmbChiNhanh.DisplayMember = "TENCN";
             cmbChiNhanh.ValueMember = "TENSERVER";
+            cmbChiNhanh.SelectedIndex = Program.mChiNhanh;
         }
         public FormMoTaiKhoan()
         {

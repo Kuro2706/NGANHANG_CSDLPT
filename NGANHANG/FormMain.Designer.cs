@@ -132,6 +132,7 @@ namespace NGANHANG
             this.btnSaoKeGiaoDich.LargeWidth = 100;
             this.btnSaoKeGiaoDich.Name = "btnSaoKeGiaoDich";
             this.btnSaoKeGiaoDich.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnSaoKeGiaoDich.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSaoKeGiaoDich_ItemClick);
             // 
             // btnLietKeTaiKhoan
             // 
@@ -141,6 +142,7 @@ namespace NGANHANG
             this.btnLietKeTaiKhoan.LargeWidth = 100;
             this.btnLietKeTaiKhoan.Name = "btnLietKeTaiKhoan";
             this.btnLietKeTaiKhoan.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnLietKeTaiKhoan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLietKeTaiKhoan_ItemClick);
             // 
             // btnLietKeKhachHang
             // 
@@ -150,6 +152,7 @@ namespace NGANHANG
             this.btnLietKeKhachHang.LargeWidth = 100;
             this.btnLietKeKhachHang.Name = "btnLietKeKhachHang";
             this.btnLietKeKhachHang.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnLietKeKhachHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLietKeKhachHang_ItemClick);
             // 
             // btnDangNhap
             // 
