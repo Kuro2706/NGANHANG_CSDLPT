@@ -189,7 +189,7 @@ namespace NGANHANG.MenuForm
             }
             String undoQuery =
               string.Format("INSERT INTO DBO.KhachHang(CMND,HO,TEN,DIACHI,PHAI,NGAYCAP,SODT,MACN)" +
-                "VALUES('{0},N'{1}',N'{2}', N'{3}',N'{4}','{5}','{6}',N'{7})", txtCMND.Text.Trim(), txtHo.Text.Trim(), txtTen.Text.Trim(), txtDiaChi.Text.Trim(), txtPhai.Text.Trim(), deNgayCap.Text.Trim(), txtSDT.Text.Trim(), txtMACN.Text.Trim());
+                "VALUES('{0}',N'{1}',N'{2}', N'{3}',N'{4}','{5}','{6}',N'{7}')", txtCMND.Text.Trim(), txtHo.Text.Trim(), txtTen.Text.Trim(), txtDiaChi.Text.Trim(), txtPhai.Text.Trim(), deNgayCap.Text.Trim(), txtSDT.Text.Trim(), txtMACN.Text.Trim());
 
             Console.WriteLine(undoQuery);
             undoList.Push(undoQuery);

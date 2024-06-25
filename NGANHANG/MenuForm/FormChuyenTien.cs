@@ -15,7 +15,7 @@ namespace NGANHANG.MenuForm
 {
     public partial class FormChuyenTien : DevExpress.XtraEditors.XtraForm
     {
-        
+
         private Form CheckExists(Type ftype)
         {
             foreach (Form f in this.MdiChildren)
@@ -43,7 +43,7 @@ namespace NGANHANG.MenuForm
 
             this.taiKhoanTableAdapter.Connection.ConnectionString = Program.connstr;
             this.taiKhoanTableAdapter.Fill(this.dataSet.TaiKhoan);
-            
+
             this.gD_CHUYENTIENTableAdapter.Connection.ConnectionString = Program.connstr;
             this.gD_CHUYENTIENTableAdapter.Fill(this.dataSet.GD_CHUYENTIEN);
 
@@ -76,7 +76,7 @@ namespace NGANHANG.MenuForm
                 btnLamMoi.Enabled = true;
                 btnTHOAT.Enabled = true;
             }
-            if(Program.mGroup == "CHINHANH")
+            if (Program.mGroup == "CHINHANH")
             {
                 cmbChiNhanh.Enabled = false;
                 panelNhapLieu.Enabled = false;
@@ -126,7 +126,8 @@ namespace NGANHANG.MenuForm
             txtMANV.Text = Program.username;
             txtMANV.ReadOnly = true;
             txtSODU.ReadOnly = true;
-            
+            sOTIENSpinEdit.EditValue = 0;
+
             btnTaoGD.Enabled = btnLamMoi.Enabled = false;
             btnXacNhanGDChuyenTien.Enabled = btnHoanTac.Enabled = btnTHOAT.Enabled = true;
             gcGD_ChuyenTien.Enabled = false;
@@ -142,8 +143,9 @@ namespace NGANHANG.MenuForm
                 return;
 
             string strLenh = "EXEC SP_GIAODICHCHUYENTIEN '" + cmbSTKChuyen.SelectedValue + "','" + cmbSTKNhan.SelectedValue + "','" + sOTIENSpinEdit.Value + "','" + txtMANV.Text + "'";
-           
+
             Console.WriteLine(strLenh);
+
             int result = Program.ExecSqlNonQuery(strLenh);
             if (result != 0)
             {
@@ -151,26 +153,18 @@ namespace NGANHANG.MenuForm
                 return;
             }
 
-            
+            MessageBox.Show("Giao dịch thành công", "Thông báo", MessageBoxButtons.OK);
+            this.taiKhoanTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.taiKhoanTableAdapter.Fill(this.dataSet.TaiKhoan);
 
-            try
-            {
-                MessageBox.Show("Giao dịch thành công", "Thông báo", MessageBoxButtons.OK);
-                bdsGDChuyenTien.ResetCurrentItem();
-                this.gD_CHUYENTIENTableAdapter.Connection.ConnectionString = Program.connstr;
-                this.gD_CHUYENTIENTableAdapter.Update(this.dataSet.GD_CHUYENTIEN);
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi ghi thông tin giao dịch.\n" + ex.Message, "Lỗi!", MessageBoxButtons.OK);
-                return;
-            }
+            bdsGDChuyenTien.ResetCurrentItem();
 
             gcGD_ChuyenTien.Enabled = true;
             btnTaoGD.Enabled = btnLamMoi.Enabled = btnTHOAT.Enabled = true;
             btnXacNhanGDChuyenTien.Enabled = btnHoanTac.Enabled = false;
             panelNhapLieu.Enabled = false;
+
+            sOTIENSpinEdit.EditValue = 0;
         }
 
         private void btnHoanTac_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -179,7 +173,7 @@ namespace NGANHANG.MenuForm
             txtMANV.Text = "";
             txtSODU.Text = "";
             cmbSTKChuyen.SelectedValue = cmbSTKNhan.SelectedValue = "";
-            sOTIENSpinEdit.Value = 0;
+            sOTIENSpinEdit.EditValue = 0;
 
             gcGD_ChuyenTien.Enabled = true;
             btnTaoGD.Enabled = btnLamMoi.Enabled = btnTHOAT.Enabled = true;
@@ -211,7 +205,7 @@ namespace NGANHANG.MenuForm
         private bool kiemTraDuLieuDauVao()
         {
             decimal sodu = decimal.Parse(txtSODU.Text.ToString().Trim());
-      
+
             Console.WriteLine(txtSODU.Text.ToString().Trim());
             if (cmbSTKChuyen.Text.Trim() == "")
             {
@@ -232,17 +226,17 @@ namespace NGANHANG.MenuForm
 
             if (sOTIENSpinEdit.Value < 10000)
             {
-                MessageBox.Show("Số tiền cần chuyển phải từ 10000 đồng trở lên", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Số tiền cần chuyển phải từ 10.000 đồng trở lên", "Thông báo", MessageBoxButtons.OK);
                 sOTIENSpinEdit.Focus();
                 return false;
             }
-            if (sOTIENSpinEdit.Value > sodu ) 
+            if (sOTIENSpinEdit.Value > sodu)
             {
                 MessageBox.Show("Số dư không đủ để thực hiện giao dịch", "Thông báo", MessageBoxButtons.OK);
 
                 sOTIENSpinEdit.Focus();
                 return false;
-            }          
+            }
             return true;
         }
     }

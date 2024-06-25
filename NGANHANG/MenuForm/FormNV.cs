@@ -192,7 +192,7 @@ namespace NGANHANG.MenuForm
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            String maNV = ((DataRowView)bdsNhanVien[bdsNhanVien.Position])["MANV"].ToString();
+            String maNV = txtMANV.Text.Trim();
             if (maNV == Program.username)
             {
                 MessageBox.Show("Không thể xóa chính tài khoản đang đăng nhập", "Thông báo", MessageBoxButtons.OK);
@@ -219,7 +219,7 @@ namespace NGANHANG.MenuForm
 
             string undoQuery =
               string.Format("INSERT INTO DBO.NhanVien( MANV,HO,TEN,CMND,DIACHI,PHAI,SODT,MACN,TRANGTHAIXOA)" +
-                "VALUES({0},N'{1}',N'{2}', '{3}',N'{4}',N'{5}','{6}',N'{7})", maNV, txtHo.Text.Trim(), txtTen.Text.Trim(), txtCMND.Text.Trim(), txtDiaChi.Text.Trim(), txtPhai.Text.Trim(), txtSDT.Text.Trim(), txtMACN.Text.Trim(), trangThai);
+                "VALUES('{0}',N'{1}',N'{2}', '{3}',N'{4}',N'{5}','{6}',N'{7}',{8})", maNV, txtHo.Text.Trim(), txtTen.Text.Trim(), txtCMND.Text.Trim(), txtDiaChi.Text.Trim(), txtPhai.Text.Trim(), txtSDT.Text.Trim(), txtMACN.Text.Trim(), trangThai);
 
             Console.WriteLine(undoQuery);
             undoList.Push(undoQuery);
@@ -271,7 +271,7 @@ namespace NGANHANG.MenuForm
 
 
             String maChiNhanh = drv["MACN"].ToString();
-            int trangThai = (cbTrangThaiXoa.Checked == true) ? 1 : 0;
+            int trangThai = (cbTrangThaiXoa.Checked == true) ? 0 : 1;
             if (Program.username == maNhanVien)
                 if (trangThai == 1)
                 {
@@ -535,7 +535,18 @@ namespace NGANHANG.MenuForm
         }
         private bool kiemTraDuLieuDauVao()
         {
-
+            if (txtMANV.Text == "")
+            {
+                MessageBox.Show("Không bỏ trống mã nhân viên", "Thông báo", MessageBoxButtons.OK);
+                txtMANV.Focus();
+                return false;
+            }
+            if (!Regex.IsMatch(txtMANV.Text, @"^NV\d{2}$"))
+            {
+                MessageBox.Show("Mã nhân viên phải có định dạng 'NVXX', ví dụ: NV01, NV02", "Thông báo", MessageBoxButtons.OK);
+                txtMANV.Focus();
+                return false;
+            }
 
             if (txtHo.Text == "")
             {

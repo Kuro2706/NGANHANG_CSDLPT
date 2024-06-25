@@ -134,19 +134,13 @@ namespace NGANHANG
             if (conn.State == ConnectionState.Closed) conn.Open();
             try
             {
-                Sqlcmd.ExecuteNonQuery(); conn.Close();
-                return 0;
+                Sqlcmd.ExecuteNonQuery(); conn.Close(); return 0;
             }
             catch (SqlException ex)
             {
-                if (ex.Message.Contains("Error converting data type varchar to int"))
-                    MessageBox.Show("Bạn format Cell lại cột \"Ngày Thi\" qua kiểu Number hoặc mở File Excel.");
-                else MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message);
                 conn.Close();
-                Console.WriteLine(ex.Message);
-                return ex.State;
-
-
+                return 1;
             }
         }
         [STAThread]

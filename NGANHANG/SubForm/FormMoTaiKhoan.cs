@@ -111,7 +111,7 @@ namespace NGANHANG.SubForm
             {
                 if (Int64.Parse(txtSoDu.Text.ToString()) < 50000)
                 {
-                    MessageBox.Show("Số dư phải lớn hơn 50000");
+                    MessageBox.Show("Số dư phải lớn hơn 50.000 đồng");
                     txtSoDu.Focus();
                     return false;
                 }

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -123,6 +124,7 @@ namespace NGANHANG.MenuForm
             txtSODU.ReadOnly = true;
             LoaiGD = "RT";
             cmbLoaiGD.SelectedItem = LoaiGD;
+            sOTIENSpinEdit.Value = 0;
 
             btnTaoGD.Enabled = btnLamMoi.Enabled = false;
             btnXacNhanGDChuyenTien.Enabled = btnHoanTac.Enabled = btnTHOAT.Enabled = true;
@@ -138,6 +140,7 @@ namespace NGANHANG.MenuForm
             string strLenh2 = "EXEC SP_GIAODICHGOIRUT '" + cmbSTK.SelectedValue + "','" + cmbLoaiGD.SelectedItem + "','" + sOTIENSpinEdit.Value + "','" + txtMANV.Text + "'";
 
             Console.WriteLine(strLenh2);
+
             int result2 = Program.ExecSqlNonQuery(strLenh2);
             if (result2 != 0)
             {
@@ -145,26 +148,18 @@ namespace NGANHANG.MenuForm
                 return;
             }
 
+            MessageBox.Show("Giao dịch thành công", "Thông báo", MessageBoxButtons.OK);
+            this.taiKhoanTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.taiKhoanTableAdapter.Fill(this.dataSet.TaiKhoan);
 
-
-            try
-            {
-                MessageBox.Show("Giao dịch thành công", "Thông báo", MessageBoxButtons.OK);
-                bdsGDGoiRut.ResetCurrentItem();
-                this.gD_GOIRUTTableAdapter.Connection.ConnectionString = Program.connstr;
-                this.gD_GOIRUTTableAdapter.Update(this.dataSet.GD_GOIRUT);
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi ghi thông tin giao dịch.\n" + ex.Message, "Lỗi!", MessageBoxButtons.OK);
-                return;
-            }
+            bdsGDGoiRut.ResetCurrentItem();
 
             gcGD_GoiRut.Enabled = true;
             btnTaoGD.Enabled = btnLamMoi.Enabled = btnTHOAT.Enabled = true;
             btnXacNhanGDChuyenTien.Enabled = btnHoanTac.Enabled = false;
             panelNhapLieu.Enabled = false;
+
+            sOTIENSpinEdit.EditValue = 0;
         }
 
         private void btnHoanTac_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -222,7 +217,7 @@ namespace NGANHANG.MenuForm
 
             if (sOTIENSpinEdit.Value < 100000)
             {
-                MessageBox.Show("Số tiền phải từ 1000000 đồng trở lên", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Số tiền phải từ 100.000 đồng trở lên", "Thông báo", MessageBoxButtons.OK);
                 sOTIENSpinEdit.Focus();
                 return false;
             }
@@ -238,8 +233,12 @@ namespace NGANHANG.MenuForm
 
         private void cmbLoaiGD_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoaiGD = cmbLoaiGD.SelectedItem.ToString();
-            Console.WriteLine("Loại giao dịch được chọn: " + LoaiGD);
+            if (cmbLoaiGD.SelectedItem != null)
+            {
+                // Sử dụng SelectedItem để lấy giá trị của mục được chọn
+                string LoaiGD = cmbLoaiGD.SelectedItem.ToString();
+                Console.WriteLine("Loại giao dịch được chọn: " + LoaiGD);
+            }
         }
     }
 }

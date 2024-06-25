@@ -335,6 +335,8 @@ namespace NGANHANG.MenuForm
             this.colSODU.AppearanceHeader.Options.UseTextOptions = true;
             this.colSODU.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colSODU.Caption = "Số dư";
+            this.colSODU.DisplayFormat.FormatString = "n0";
+            this.colSODU.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSODU.FieldName = "SODU";
             this.colSODU.MinWidth = 25;
             this.colSODU.Name = "colSODU";
