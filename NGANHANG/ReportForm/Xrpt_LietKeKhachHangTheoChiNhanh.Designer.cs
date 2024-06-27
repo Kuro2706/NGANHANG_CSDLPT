@@ -565,7 +565,7 @@ namespace NGANHANG.ReportForm
             // 
             this.pageInfo1.Dpi = 254F;
             this.pageInfo1.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(13F, 13F);
+            this.pageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 13.00005F);
             this.pageInfo1.Name = "pageInfo1";
             this.pageInfo1.PageInfo = DevExpress.XtraPrinting.PageInfo.DateTime;
             this.pageInfo1.SizeF = new System.Drawing.SizeF(824F, 58F);

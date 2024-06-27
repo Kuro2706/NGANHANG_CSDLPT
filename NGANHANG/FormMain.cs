@@ -72,6 +72,7 @@ namespace NGANHANG
             pageQuanLy.Visible = false;
             pageNghiepVu.Visible = false;
             pageBaoCao.Visible = true;
+            btnSaoKeGiaoDich.Enabled = true;
             btnLietKeKhachHang.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             btnLietKeTaiKhoan.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
 
@@ -223,7 +224,17 @@ namespace NGANHANG
 
         private void btnSaoKeGiaoDich_ItemClick(object sender, ItemClickEventArgs e)
         {
-        
+            Form f = this.CheckExists(typeof(Frpt_SaoKeGiaoDichCua1TaiKhoanTrong1KhoanThoiGian));
+            if (f != null)
+            {
+                f.Activate();
+            }
+            else
+            {
+                Frpt_SaoKeGiaoDichCua1TaiKhoanTrong1KhoanThoiGian form = new Frpt_SaoKeGiaoDichCua1TaiKhoanTrong1KhoanThoiGian();
+                form.MdiParent = this;
+                form.Show();
+            }
         }
 
         private void btnLietKeTaiKhoan_ItemClick(object sender, ItemClickEventArgs e)

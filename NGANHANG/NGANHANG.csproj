@@ -132,6 +132,12 @@
     <Compile Include="ReportForm\Frpt_LietKeTaiKhoanMoTrongMotKhoangThoiGian.Designer.cs">
       <DependentUpon>Frpt_LietKeTaiKhoanMoTrongMotKhoangThoiGian.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportForm\Frpt_SaoKeGiaoDichCua1TaiKhoanTrong1KhoanThoiGian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForm\Frpt_SaoKeGiaoDichCua1TaiKhoanTrong1KhoanThoiGian.Designer.cs">
+      <DependentUpon>Frpt_SaoKeGiaoDichCua1TaiKhoanTrong1KhoanThoiGian.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportForm\Xprt_LietKeTaiKhoanMoTrongMotKhoangThoiGian.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -143,6 +149,12 @@
     </Compile>
     <Compile Include="ReportForm\Xrpt_LietKeKhachHangTheoChiNhanh.Designer.cs">
       <DependentUpon>Xrpt_LietKeKhachHangTheoChiNhanh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportForm\Xrpt_SaoKeGiaoDichCua1TaiKhoanTrong1KhoanThoiGian.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportForm\Xrpt_SaoKeGiaoDichCua1TaiKhoanTrong1KhoanThoiGian.Designer.cs">
+      <DependentUpon>Xrpt_SaoKeGiaoDichCua1TaiKhoanTrong1KhoanThoiGian.cs</DependentUpon>
     </Compile>
     <Compile Include="SubForm\FormChonNV.cs">
       <SubType>Form</SubType>
@@ -201,11 +213,17 @@
     <EmbeddedResource Include="ReportForm\Frpt_LietKeTaiKhoanMoTrongMotKhoangThoiGian.resx">
       <DependentUpon>Frpt_LietKeTaiKhoanMoTrongMotKhoangThoiGian.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportForm\Frpt_SaoKeGiaoDichCua1TaiKhoanTrong1KhoanThoiGian.resx">
+      <DependentUpon>Frpt_SaoKeGiaoDichCua1TaiKhoanTrong1KhoanThoiGian.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportForm\Xprt_LietKeTaiKhoanMoTrongMotKhoangThoiGian.resx">
       <DependentUpon>Xprt_LietKeTaiKhoanMoTrongMotKhoangThoiGian.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportForm\Xrpt_LietKeKhachHangTheoChiNhanh.resx">
       <DependentUpon>Xrpt_LietKeKhachHangTheoChiNhanh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForm\Xrpt_SaoKeGiaoDichCua1TaiKhoanTrong1KhoanThoiGian.resx">
+      <DependentUpon>Xrpt_SaoKeGiaoDichCua1TaiKhoanTrong1KhoanThoiGian.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubForm\FormChonNV.resx">
       <DependentUpon>FormChonNV.cs</DependentUpon>

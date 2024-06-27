@@ -117,7 +117,7 @@ namespace NGANHANG
                 return null;
             }
         }
-        public static DataTable ExecSqlDataTable(String cmd, bool isPub)
+        public static DataTable ExecSqlDataTable(String cmd)
         {
             DataTable dt = new DataTable();
             if (Program.conn.State == ConnectionState.Closed) Program.conn.Open();
